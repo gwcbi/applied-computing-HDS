@@ -1,0 +1,37 @@
+name: hds-computing
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  - pip
+  - jupyterlab
+  - jupytext
+  - pandas
+  - numpy
+  - polars
+  - matplotlib
+  - seaborn
+  - biopython
+  - requests
+  - regex
+  - sqlite
+  - duckdb
+  - snakemake-minimal
+  - nbformat
+  - pytest
+  - black
+  - ruff
+  - pip:
+      - python-dotenv
+
+# Usage:
+#   conda env create -f environment.yml
+#   conda activate hds-computing
+#
+# For a faster resolve, use micromamba or:
+#   uv pip install -r environment/requirements-lock.txt   (see requirements-lock.txt, generated post-course-build)
+#
+# This file is the reference environment used to build/test all lecture demos
+# and lab solutions. It is also the answer key referenced by Lab 1
+# (Reproducible Computing Setup).
