@@ -43,3 +43,16 @@ for students who may not have made that connection on their own.
 successfully once. What should happen when you change something in step 5
 and re-run?" (Gets at the core value proposition of workflow managers —
 only step 5+ should re-run.)
+
+## Open items
+
+- **Remote development (moved here from Week 1)** — Pegasus HPC access
+  wasn't available at the start of the semester, so `ssh`/VS Code
+  Remote-SSH content (originally planned for Week 1) was deferred to this
+  week. Week 1 only covered it conceptually. Needs to be folded into this
+  week's plan: likely fits the practical (Oct 28) — running the
+  Snakemake/Nextflow pipeline on Pegasus/SLURM instead of locally is a
+  natural motivating use case — but the lecture outline and timing above
+  don't yet budget time for `ssh` basics, and this lecture is already
+  fairly full (65 min of content in a 75-min slot). Also confirm Pegasus
+  account requests are submitted with enough lead time before Oct 26.

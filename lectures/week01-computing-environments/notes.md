@@ -18,9 +18,12 @@ Environments, Reproducibility, and Data Wrangling)
    prereqs); review fast: navigation, pipes/redirection, `grep`/`sed`/`awk`
    at a glance, permissions, `ssh`. Don't re-teach from zero — diagnose the
    room's level with a quick poll/show-of-hands and adjust pace live.
-3. **Remote development and analysis** (20 min) — why compute happens on
-   remote servers/HPC in health data science (data too large/sensitive for
-   laptops); `ssh`, remote Jupyter/RStudio Server basics, VS Code Remote-SSH.
+3. **Why remote compute matters in HDS** (8 min) — conceptual only, no live
+   demo: why compute happens on remote servers/HPC in health data science
+   (data too large/sensitive for laptops). Say explicitly that hands-on
+   remote development — `ssh` into Pegasus HPC, VS Code Remote-SSH — is
+   coming in Week 10, once cluster access is arranged; today and Wednesday's
+   practical are local-machine only.
 4. **Overview of R and Python** (15 min) — not a tutorial; a map of what
    each ecosystem is strong at and why this course uses both (R:
    statistics/tidyverse conventions; Python: general-purpose, ML/bio
@@ -31,12 +34,19 @@ Environments, Reproducibility, and Data Wrangling)
 
 ## Practical session (Aug 26)
 
-- Hands-on: everyone gets a working shell session (local or provided
-  remote access — confirm which before Week 1, see open item), runs
-  through a short scripted checklist (navigate, redirect output, `ssh` to a
-  remote host, open it in VS Code Remote-SSH).
-- Quick diagnostic: have students self-report prior R/Python/shell
+- Hands-on, follow-along session, local machine only: a "Getting started"
+  pre-class step (install a terminal, install/update Git, per OS) → shell
+  fundamentals (navigation, files, pipes/redirection, `grep`/`find`) → Git
+  & GitHub (init, add/commit, `.gitignore`, push, clone). Full walkthrough
+  with commands and expected output: [`practical.md`](practical.md) —
+  designed to be projected and typed along with live. No `ssh`/Pegasus
+  content — remote development moves to Week 10 once HPC access is set up.
+- Send students the "Getting started" section (or the whole `practical.md`
+  link) ahead of Wednesday so installs happen before class, not during it.
+- Quick diagnostic: have students self-report prior R/Python/shell/Git
   experience — use this to calibrate pacing for Weeks 2–5.
+- The repo students build during this session doubles as a head start on
+  Lab 1 (due Week 2).
 
 ## Discussion prompt
 
@@ -55,8 +65,14 @@ Sets up Lab 1 (due Week 2) and Week 2's environment-management content.
 
 ## Open items
 
-- **Remote compute access** — syllabus mentions "remote development" but
-  doesn't specify what server/HPC students will actually use. Needs a
-  decision (GW HPC allocation? cloud instances? local-only?) before this
-  lecture can be concrete rather than conceptual.
+- **Remote compute access — resolved for now:** Pegasus HPC access isn't
+  available yet, so hands-on remote development (`ssh`, VS Code Remote-SSH)
+  is deferred to Week 10, where it fits naturally alongside running
+  Snakemake/Nextflow pipelines at scale. Week 1 covers it conceptually only.
+  See `lectures/week10-workflow-management/notes.md` for the corresponding
+  open item.
+- `W01L_slides.pptx` still has the old 15-min, 3-slide Remote
+  Development/Pegasus block (slides 13–15) — needs manual trimming to match
+  the shortened conceptual-only segment above (I can't edit the `.pptx`
+  directly).
 - Confirm room (SPH 300) has usable wifi/power for a hands-on shell session.
