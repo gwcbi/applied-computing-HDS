@@ -13,6 +13,10 @@ repository, pushed to your own GitHub account — which is most of Task 1 of
 
 If you haven't done so already, make sure you have completed the tasks in [Getting Started](./README.md#getting-started)
 
+> Below, each gray box of commands is followed by a box showing what you
+> should see. Use the copy icon (top-right of the box) to copy just the
+> commands — there's no `$` prompt in them, so pasting won't break.
+
 ---
 
 ## Part 1 — The Shell (30 min)
@@ -24,15 +28,20 @@ now.
 
 ### 1.1 Where am I? (`pwd`, `ls`, `cd`)
 
-```console
-$ pwd
+##### Commands:
+
+```bash
+pwd
+ls
+cd Desktop
+pwd
+```
+
+##### Output:
+
+```text
 /Users/you
-
-$ ls
 Desktop  Documents  Downloads
-
-$ cd Desktop
-$ pwd
 /Users/you/Desktop
 ```
 
@@ -50,12 +59,31 @@ $ pwd
 We'll use one folder for the rest of today — and it'll become your Lab 1
 starter repo.
 
-```console
-$ mkdir hds-practical
-$ cd hds-practical
-$ mkdir scripts
-$ ls
+##### Commands:
+
+```bash
+mkdir hds-practical
+```
+
+Now change into the directory you just created and create a `scripts` subdirectory:
+
+```bash
+cd hds-practical
+mkdir scripts
+ls
+```
+
+##### Output:
+
+```text
 scripts
+```
+
+You have just created a directory structure that looks like this:
+
+```text
+└── hds-practical  <-- You are here
+    └── scripts
 ```
 
 - `mkdir <name>` — make a directory
@@ -71,10 +99,16 @@ scripts
 
 Let's make something that looks like real (fake) health data:
 
-```console
-$ printf "patient_id,age,site\nP001,54,DC\nP002,61,MD\nP003,47,DC\nP004,72,VA\nP005,39,MD\n" > patients.csv
+##### Commands:
 
-$ cat patients.csv
+```bash
+printf "patient_id,age,site\nP001,54,DC\nP002,61,MD\nP003,47,DC\nP004,72,VA\nP005,39,MD\n" > patients.csv
+cat patients.csv
+```
+
+##### Output:
+
+```text
 patient_id,age,site
 P001,54,DC
 P002,61,MD
@@ -83,25 +117,34 @@ P004,72,VA
 P005,39,MD
 ```
 
-- `>` writes (overwrites!) a file; `>>` appends to it
-- `cat` prints a file's contents
-- `wc -l` counts lines; `head`/`tail` show the first/last few lines
-- `|` (pipe) sends one command's output into the next command's input
+There a several utilities you can use to investigate the file. We just used `cat` (concatenate) which prints the
+file. `head` and `tail` are similar to `cat` except they only show the beginning or end of a file.
+`grep` (Global Regular Expression Print) is used to search for patterns (regular expressions, more on this later)
+in the files. `wc` (word count) counts the number of words, lines, characters, or bytes in a file. 
 
-```console
-$ wc -l patients.csv
+There are also operators that change where a command receives or sends its input or output - used for sending data
+from one command to another. `>` sends the output to a file. If the file does not exist, it creates the file, otherwise 
+the file is overwritten (!!). `>>` appends the output to a file. `|` (pipe) sends the output of the first command
+to the input of the second command.
+
+##### Commands:
+
+```bash
+wc -l patients.csv
+grep DC patients.csv
+cut -d',' -f1,3 patients.csv | grep DC
+sort -t',' -k2 -n patients.csv > patients_by_age.csv
+cat patients_by_age.csv
+```
+
+##### Output:
+
+```text
 6 patients.csv
-
-$ grep DC patients.csv
 P001,54,DC
 P003,47,DC
-
-$ cut -d',' -f1,3 patients.csv | grep DC
 P001,DC
 P003,DC
-
-$ sort -t',' -k2 -n patients.csv > patients_by_age.csv
-$ cat patients_by_age.csv
 ```
 
 That last line is the whole idea of the shell in one command: **filter,
@@ -113,15 +156,20 @@ then redirect** — no GUI, no clicking, and it's exactly repeatable.
 
 ### 1.4 Wildcards and finding things
 
-```console
-$ ls *.csv
-patients.csv  patients_by_age.csv
+##### Commands:
 
-$ grep -l DC *.csv
+```bash
+ls *.csv
+grep -l DC *.csv
+find . -name "*.csv"
+```
+
+##### Output:
+
+```text
+patients.csv  patients_by_age.csv
 patients.csv
 patients_by_age.csv
-
-$ find . -name "*.csv"
 ./patients.csv
 ./patients_by_age.csv
 ```
@@ -132,8 +180,15 @@ files, logs, or metadata sheets (Week 4).
 
 ### 1.5 Stretch: a one-line loop
 
-```console
-$ for f in *.csv; do echo "$f has $(wc -l < "$f") lines"; done
+##### Commands:
+
+```bash
+for f in *.csv; do echo "$f has $(wc -l < "$f") lines"; done
+```
+
+##### Output:
+
+```text
 patients.csv has 6 lines
 patients_by_age.csv has 5 lines
 ```
@@ -151,22 +206,28 @@ the internet you (and collaborators) can push to and pull from.
 
 ### 2.1 One-time setup (skip if you've done this before)
 
-```console
-$ git config --global user.name "Your Name"
-$ git config --global user.email "you@gwu.edu"
-$ git config --global init.defaultBranch main
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@gwu.edu"
+git config --global init.defaultBranch main
 ```
 
 Do this once per computer, not once per project.
 
 ### 2.2 Creating a repository
 
-```console
-$ cd ~/Desktop/hds-practical
-$ git init
-Initialized empty Git repository in .../hds-practical/.git/
+##### Commands:
 
-$ git status
+```bash
+cd ~/Desktop/hds-practical
+git init
+git status
+```
+
+##### Output:
+
+```text
+Initialized empty Git repository in .../hds-practical/.git/
 On branch main
 No commits yet
 Untracked files:
@@ -184,28 +245,41 @@ stand.
 Git has a two-step save: **stage** the changes you want, then **commit**
 them with a message explaining why.
 
-```console
-$ git add patients.csv
-$ git status
+##### Commands:
+
+```bash
+git add patients.csv
+git status
+git commit -m "Add toy patient roster"
+```
+
+##### Output:
+
+```text
 Changes to be committed:
   new file:   patients.csv
-
-$ git commit -m "Add toy patient roster"
 [main (root-commit) a1b2c3d] Add toy patient roster
  1 file changed, 6 insertions(+)
 ```
 
-```console
-$ echo "P006,58,DC" >> patients.csv
-$ git diff
+##### Commands:
+
+```bash
+echo "P006,58,DC" >> patients.csv
+git diff
+git add patients.csv
+git commit -m "Add patient P006"
+git log --oneline
+```
+
+##### Output:
+
+(among the `git diff` and `git log` output):
+
+```text
 -P005,39,MD
 +P005,39,MD
 +P006,58,DC
-
-$ git add patients.csv
-$ git commit -m "Add patient P006"
-
-$ git log --oneline
 b2c3d4e Add patient P006
 a1b2c3d Add toy patient roster
 ```
@@ -224,11 +298,13 @@ permanently in a project's history — `git rm` after the fact does **not**
 erase it from old commits. A `.gitignore` file stops files from being
 tracked in the first place:
 
-```console
-$ echo "*.log" > .gitignore
-$ echo "secrets.txt" >> .gitignore
-$ git add .gitignore
-$ git commit -m "Ignore logs and secrets"
+##### Commands:
+
+```bash
+echo "*.log" > .gitignore
+echo "secrets.txt" >> .gitignore
+git add .gitignore
+git commit -m "Ignore logs and secrets"
 ```
 
 Today's `patients.csv` is fake data, so it's fine to commit — but this is
@@ -240,10 +316,41 @@ On [github.com](https://github.com): click **New repository**, name it
 `hds-practical`, leave it **empty** (no README, no `.gitignore` — you
 already have a repo locally, don't create a second history).
 
-```console
-$ git remote add origin https://github.com/YOUR-USERNAME/hds-practical.git
-$ git push -u origin main
+```bash
+git remote add origin https://github.com/YOUR-USERNAME/hds-practical.git
+git push -u origin main
 ```
+
+**If this prompts you for a username and password: your GitHub account
+password will not work here.** GitHub disabled plain-password pushes over
+HTTPS in 2021 — you need a **personal access token (PAT)** instead, which
+you paste in place of the password.
+
+Generate one now:
+
+1. Go to
+   [github.com/settings/tokens](https://github.com/settings/tokens) →
+   **Generate new token** → **Generate new token (classic)**.
+2. Give it a note like `hds-practical`, set an expiration (90 days is
+   fine), and check the **`repo`** scope.
+3. Click **Generate token** and **copy it immediately** — GitHub only
+   shows it once. Paste it somewhere temporary (a text file) until you've
+   used it.
+4. Run `git push -u origin main` again. At the username prompt, type your
+   GitHub username. At the password prompt, **paste the token**, not your
+   account password. (The terminal won't show any characters as you
+   paste — that's normal.)
+
+Your Mac/Windows will usually offer to remember the token in Keychain /
+Credential Manager after the first successful push, so you won't have to
+paste it again on this machine.
+
+> If you'd rather not deal with tokens at all, SSH keys are the other
+> standard option (`git remote add origin
+> git@github.com:YOUR-USERNAME/hds-practical.git` instead of the `https://`
+> URL) — see [GitHub's SSH
+> guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+> if you want to set that up, but a PAT is enough for today.
 
 Refresh the GitHub page — your commits, with your messages, are now on the
 internet. That's your repo, live, in under 15 commands total today.
@@ -254,11 +361,11 @@ internet. That's your repo, live, in under 15 commands total today.
 You'll use this all semester to pull down course materials — clone the
 course repo now, right next to `hds-practical/`:
 
-```console
-$ cd ~/Desktop
-$ git clone https://github.com/gwcbi/applied-computing-HDS.git
-$ cd applied-computing-HDS
-$ ls
+```bash
+cd ~/Desktop
+git clone https://github.com/gwcbi/applied-computing-HDS.git
+cd applied-computing-HDS
+ls
 ```
 
 Later in the semester, running `git pull` inside this folder grabs
