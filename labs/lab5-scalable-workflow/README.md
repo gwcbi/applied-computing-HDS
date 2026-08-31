@@ -1,6 +1,6 @@
 # Lab 5: Scalable Analysis Workflow
 
-**Due:** Week 10. **Weight:** 9% of final grade.
+**Due:** Wed, Nov 4, 11:59pm (see [SCHEDULE.md](../../SCHEDULE.md)). **Weight:** 9% of final grade.
 
 ## Background
 

@@ -48,6 +48,12 @@ right tool — relevant since Lab 2 requires notebooks specifically.)
 
 ## Open items
 
-- Since there's no practical session this week (only one class meeting),
-  confirm the full notebook build-along demo fits in one session, or trim
-  scope (e.g., drop live Colab demo to a mention only).
+- Resolved (Aug 30): `SCHEDULE.md` now carries an explicit **Hands-on
+  exercise** bullet for this week (build/run a short notebook + AI-assisted
+  troubleshooting), matching how Week 8 handles its own holiday-shortened
+  single session. The outline above still runs ~80-85 min against the
+  75-min slot — trim scope when this week gets its full build (e.g., drop
+  live Colab demo to a mention only) to leave room for the hands-on
+  portion.
+- **Lab 2 due Wed, Sep 16** (Week 4) — one week after this lecture, same as
+  Lab 1's one-week cadence.

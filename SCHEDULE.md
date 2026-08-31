@@ -18,16 +18,21 @@ Schedule is identical for the graduate (PUBH 6854) and undergraduate (PUBH 4201)
 
 ### Week 2 — Reproducible Research Fundamentals
 - **Lecture:** Aug 31 · **Practical:** Sep 2
-- Topics: Dependency management; virtual environments (conda, uv, renv); containers (Docker, Singularity); containers in cloud computing; using generative AI for setup and troubleshooting
-- Required readings: PCB Chapters 1, 4–6; [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html)
-- Deliverable: **Lab 1 — Reproducible Computing Setup**
-- Learning objectives: Implement virtual environments; concepts of containerization and containerization tools
+- Topics: Dependency management and version pinning; virtual environments (conda/mamba, uv, renv) — extended hands-on time; containers (Docker) — concepts, live demo, and guided setup; containers in cloud/HPC computing (brief, conceptual); using generative AI for environment/dependency troubleshooting
+- Required readings: 
+  - [Introduction to Conda for (Data) Scientists](https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/) (Carpentries Incubator); 
+  - [Reproducible Environments](https://book.the-turing-way.org/reproducible-research/renv/) (The Turing Way); 
+  - [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html) (Posit); 
+  - [Introduction to Docker](https://carpentries-incubator.github.io/docker-introduction/) (Carpentries Incubator)
+- Deliverable: **Lab 1 — Reproducible Computing Setup** (due Wed, Sep 9, 11:59pm)
+- Learning objectives: Create, export, and restore a reproducible virtual environment (conda/mamba, uv, or renv) from an environment file or lockfile; explain what a container adds beyond a virtual environment and when one is needed; use generative AI critically to diagnose and fix an environment/dependency error
 
 ### Week 3 — Reproducible Research Notebooks
 - **No class:** Sep 7 · **Lecture:** Sep 9
 - Topics: Computational notebooks (Jupyter, Colab, R Markdown); using generative AI for setup and troubleshooting
 - Required readings: DSF Chapter 1; [R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/)
-- Deliverable: **Lab 2 — Analysis Notebook**
+- Hands-on exercise: Build and run a short reproducible notebook (Jupyter or R Markdown) from a provided template; use generative AI to diagnose a seeded kernel/environment error
+- Deliverable: **Lab 2 — Analysis Notebook** (due Wed, Sep 16, 11:59pm)
 - Learning objectives: Create and compile a research notebook in R and Python
 
 ### Week 4 — Text Processing
@@ -43,7 +48,7 @@ Schedule is identical for the graduate (PUBH 6854) and undergraduate (PUBH 4201)
 - Topics: Data frame ecosystems (R/tidyverse, pandas, polars); constructing samples × features × metadata tables; introduction to analytic data readiness
 - Required readings: PCB Chapters 10–11; DSF Chapters 3–7
 - Hands-on exercise: Build a small feature table from raw inputs
-- Deliverable: **Lab 3 — Parsing Messy Health or Genomic Data**
+- Deliverable: **Lab 3 — Parsing Messy Health or Genomic Data** (due Wed, Sep 30, 11:59pm)
 - Learning objectives: Transform raw data into structured analytic formats; understand data readiness for modeling and inference
 
 ---
@@ -74,13 +79,13 @@ Schedule is identical for the graduate (PUBH 6854) and undergraduate (PUBH 4201)
 ### Week 9 — Advanced Data Architectures
 - **Lecture:** Oct 19 · **Practical:** Oct 21
 - Topics: Common data formats in HDS — flat file, hierarchical (H5), columnar (parquet/Apache Arrow); HDS-specific semi-structured formats (FASTQ, BED, GFF/GTF, VCF, BAM); accessing APIs (JSON)
-- Deliverable: **Lab 4 — Database-Driven Feature Table**
+- Deliverable: **Lab 4 — Database-Driven Feature Table** (due Wed, Oct 28, 11:59pm)
 
-### Week 10 — Workflow Management
+### Week 10 — Workflow Management & Remote Computing
 - **Lecture:** Oct 26 · **Practical:** Oct 28
-- Topics: Workflow fundamentals — inputs and outputs as dependencies; workflow management systems (Snakemake, Nextflow, Cromwell)
-- Deliverable: **Lab 5 — Scalable Analysis Workflow**
-- Learning objectives: Fundamentals of workflow management tools; implement loose collections of analysis scripts as reproducible workflows
+- Topics: Workflow fundamentals — inputs and outputs as dependencies; workflow management systems (Snakemake, Nextflow, Cromwell); remote development and SSH fundamentals (hands-on via pwn.college's Linux Luminarium dojo — free, self-paced, no local setup or institutional approval required)
+- Deliverable: **Lab 5 — Scalable Analysis Workflow** (due Wed, Nov 4, 11:59pm)
+- Learning objectives: Fundamentals of workflow management tools; implement loose collections of analysis scripts as reproducible workflows; connect to and work confidently in a remote Linux environment over SSH
 
 ---
 

@@ -162,15 +162,15 @@ different (and still valid) way to work:
   you tell it and nothing more, and it forces you to actually understand
   what's running instead of trusting an IDE's magic. It's also the *only*
   option in a lot of remote-server situations — editing a config file over
-  `ssh` on Pegasus, you're using `nano` or `vim`, not PyCharm.
+  `ssh` on a remote server, you're using `nano` or `vim`, not PyCharm.
 - **Cons:** you're assembling the debugger, the dataframe viewer, the
   linter, and the git UI yourself (or doing without), and for large,
   multi-file projects that adds up.
 
 **Verdict for this course:** yes, a good editor is still essential — but
 as a *complement* to an IDE, not a replacement for one. You will edit
-files over `ssh` starting Week 10 (Pegasus doesn't have a GUI), so
-basic comfort with `nano` (and ideally `vim`) is a real, non-optional
+files over `ssh` starting Week 10 (most remote servers don't have a GUI),
+so basic comfort with `nano` (and ideally `vim`) is a real, non-optional
 skill. For your day-to-day project work, though, use a full IDE — the
 productivity gain for multi-file, multi-language HDS projects is real.
 
@@ -210,7 +210,7 @@ AI-assistant support (GitHub Copilot is supported natively since RStudio
 2023.09) lags behind VS Code/JetBrains in breadth.
 
 **[Jupyter / JupyterLab](https://jupyter.org/)** — Free, open-source,
-runs locally or on a server (including Pegasus). Pros: the *de facto*
+runs locally or on a remote server. Pros: the *de facto*
 standard for exploratory, narrative-driven analysis — code, output, plots,
 and prose interleaved in one document, which is exactly the format of
 **Lab 2** (Week 3). Cons: notebooks encourage messy, out-of-order-execution

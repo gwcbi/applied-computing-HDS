@@ -4,6 +4,25 @@ Companion repository for **PUBH 6854 / PUBH 4201**, Fall 2026 (Matthew Bendall, 
 
 Application of computational paradigms in biomedical sciences and health informatics: computing environments, reproducible research, data management, and analysis workflows using R, Python, and generative AI.
 
+## Deadlines
+
+| Assignment                                   | Due Date             |
+|----------------------------------------------|----------------------|
+| Lab 1 — Reproducible Computing Setup         | Wed, Sep 9, 11:59pm  |
+| Lab 2 — Analysis Notebook                    | Wed, Sep 16, 11:59pm |
+| Lab 3 — Parsing Messy Health or Genomic Data | Wed, Sep 30, 11:59pm |
+| Lab 4 — Database-Driven Feature Table        | Wed, Oct 28, 11:59pm |
+| Lab 5 — Scalable Analysis Workflow           | Wed, Nov 4, 11:59pm  |
+| Final Project Proposal                       | Wed, Oct 7           |
+| Final Project Presentation                   | Wed, Dec 9           |
+| Final Project (final deliverable)            | Mon, Dec 14 11:59pm  |
+| Quiz 1                                       | Fri, Sep 4, 11:59pm  |
+| Quiz 2                                       | TBD                  |
+| Quiz 3                                       | TBD                  |
+| Quiz 4                                       | TBD                  |
+| Quiz 5                                       | TBD                  |
+
+
 ## Repository structure
 
 - `lectures/` — one folder per week (`week01`…`week15`), slides and in-class materials

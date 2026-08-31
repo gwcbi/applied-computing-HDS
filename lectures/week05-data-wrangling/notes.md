@@ -33,7 +33,7 @@ practical) · **Module 1** (final week of Module 1)
 
 ## Connections
 
-**Lab 3 due this week.** This week's content directly sets up **Lab 4**
+**Lab 3 due Wed, Sep 30** (Week 6). This week's content directly sets up **Lab 4**
 (Database-Driven Feature Table, Week 9) — the "samples × features ×
 metadata" framing here should be referenced again in Week 8–9.
 

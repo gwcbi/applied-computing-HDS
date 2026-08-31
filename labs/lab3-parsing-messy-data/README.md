@@ -1,6 +1,6 @@
 # Lab 3: Parsing Messy Health or Genomic Data
 
-**Due:** Week 5. **Weight:** 9% of final grade.
+**Due:** Wed, Sep 30, 11:59pm (see [SCHEDULE.md](../../SCHEDULE.md)). **Weight:** 9% of final grade.
 
 ## Background
 

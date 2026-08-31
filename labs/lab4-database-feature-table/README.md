@@ -1,6 +1,6 @@
 # Lab 4: Database-Driven Feature Table
 
-**Due:** Week 9. **Weight:** 9% of final grade.
+**Due:** Wed, Oct 28, 11:59pm (see [SCHEDULE.md](../../SCHEDULE.md)). **Weight:** 9% of final grade.
 
 ## Background
 

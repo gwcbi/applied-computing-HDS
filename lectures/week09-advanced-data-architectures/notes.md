@@ -2,7 +2,7 @@
 
 **Lecture:** Oct 19 · **Practical:** Oct 21 · **Module 2**
 
-**Lab 4 (Database-Driven Feature Table) due this week.**
+**Lab 4 (Database-Driven Feature Table) due Wed, Oct 28** (Week 10).
 
 ## Lecture outline
 

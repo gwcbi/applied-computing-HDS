@@ -1,0 +1,9 @@
+name: week2-demo-1
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+  - python=3.13
+  - pandas=2.2.3
+  - samtools

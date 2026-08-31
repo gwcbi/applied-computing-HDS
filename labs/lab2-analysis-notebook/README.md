@@ -1,6 +1,6 @@
 # Lab 2: Analysis Notebook
 
-**Due:** Week 3. **Weight:** 9% of final grade.
+**Due:** Wed, Sep 16, 11:59pm (see [SCHEDULE.md](../../SCHEDULE.md)). **Weight:** 9% of final grade.
 
 ## Background
 

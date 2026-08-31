@@ -22,9 +22,8 @@ If you haven't done so already, make sure you have completed the tasks in [Getti
 ## Part 1 — The Shell (30 min)
 
 The shell is a text-based way to talk to your computer. Starting Week 10,
-once Pegasus HPC access is set up, you'll use exactly these same commands
-over `ssh` to work on a remote server — that's the point of learning them
-now.
+you'll use exactly these same commands over `ssh` to work on a remote
+server — that's the point of learning them now.
 
 ### 1.1 Where am I? (`pwd`, `ls`, `cd`)
 
@@ -384,11 +383,10 @@ get new labs and lecture materials as they're released.
    class, turn it into your actual Lab 1 submission by adding an
    environment file, a real README, and `AI_USAGE.md` — see the [Lab 1
    instructions](../../labs/lab1-reproducible-setup/README.md).
-3. **Looking ahead:** remote development (SSH into Pegasus HPC, VS Code
-   Remote-SSH) is coming in Week 10, once cluster access is set up —
-   everything you practiced today transfers directly, you'll just be
-   typing the same commands over a network connection instead of on your
-   own machine.
+3. **Looking ahead:** remote development (SSH into a real remote Linux
+   box, via pwn.college) is coming in Week 10 — everything you practiced
+   today transfers directly, you'll just be typing the same commands over
+   a network connection instead of on your own machine.
 4. **If something didn't work today** — `git push` asking for a password
    it won't accept (use a [personal access
    token](https://github.com/settings/tokens) or SSH key, not your GitHub
