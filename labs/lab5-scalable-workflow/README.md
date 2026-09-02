@@ -41,8 +41,17 @@ chaining real steps, not the specific prior lab grade.
 
 ## Deliverable
 
-- Your `Snakefile` (or Nextflow `main.nf` + config)
-- Evidence of a full clean run and a partial re-run (console output/log)
+A link to your GitHub repository — see the [labs overview](../README.md)
+for how to submit and the repo/README requirements shared across all labs
+(public repo, `README.md`, `AI_USAGE.md`, reproducible structure as in
+[Lab 1](../lab1-reproducible-setup/README.md)).
+
+Your repo should contain:
+- Your `Snakefile` (or Nextflow `main.nf` + config), with usage notes in
+  `README.md` (the exact commands for a clean run and a partial re-run)
+- Evidence of a full clean run and a partial re-run (screenshot image or
+  pasted console output), saved as a file in the repo (e.g. `evidence/` or
+  `logs/`)
 - The final combined table and summary report
 
 ## Learning objectives

@@ -35,8 +35,17 @@ which was faster to write, which do you trust more, and why.
 
 ## Deliverable
 
-The notebook file(s), rendered output (HTML/PDF export), and source data
-or a script that fetches it.
+A link to your GitHub repository — see the [labs overview](../README.md)
+for how to submit and the repo/README requirements shared across all labs
+(public repo, `README.md`, `AI_USAGE.md`, reproducible structure as in
+[Lab 1](../lab1-reproducible-setup/README.md)).
+
+Your repo should contain:
+- The notebook file(s) (`.ipynb` and/or `.Rmd`/`.qmd`)
+- Rendered output (HTML/PDF export) for each notebook
+- The source data, or a script that fetches it
+- A `README.md` explaining how to open and re-run each notebook (e.g.
+  "Restart & Run All" in Jupyter, or `render()`/`knit()` in R)
 
 ## Learning objectives
 

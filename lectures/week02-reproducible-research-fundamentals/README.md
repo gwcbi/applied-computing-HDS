@@ -227,6 +227,11 @@ and build strings, which usually breaks on someone else's machine. `
 --from-history` exports only the packages *you* explicitly asked for,
 which conda then re-resolves correctly on the new machine.
 
+One more thing `--from-history` still leaves in the file: a `prefix:` line
+with the absolute path to your environment on your machine. Delete that
+line before committing `environment.yml` for Lab 1 — it's not portable and
+it bakes your local username into the file.
+
 ### uv (Python)
 
 | Do this | Command |
@@ -245,6 +250,15 @@ which conda then re-resolves correctly on the new machine.
 | Snapshot what's installed (the reproducibility step!) | `renv::snapshot()` |
 | Recreate it elsewhere from `renv.lock` | `renv::restore()` |
 | Check environment status | `renv::status()` |
+
+**Save your code to an `.R`/`.Rmd` file *before* running `renv::snapshot()`.**
+Snapshot decides what to record by scanning script files in your project
+for packages you use — not by recording everything currently installed. If
+you only ever typed `library(...)` into the console, `renv::snapshot()`
+will report success while quietly leaving that package out of
+`renv.lock`, and `renv::restore()` won't be able to reproduce your
+environment later. After snapshotting, open `renv.lock` and confirm the
+packages you actually used are listed in it.
 
 ### Docker
 

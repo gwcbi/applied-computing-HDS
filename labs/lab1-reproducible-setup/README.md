@@ -69,8 +69,10 @@ project structure instead of a toy one.
 
 ## Deliverable
 
-A link to your GitHub repository containing all of the above. Submit via Blackboard
-for timestamp. I will be cloning your repos and testing your project.
+A link to your GitHub repository containing all of the above — see the
+[labs overview](../README.md) for how to submit and the repo/README
+requirements shared across all labs. I will clone your repo and test your
+project, exactly as described in `rubric.md`.
 
 ## Graduate addendum (required for PUBH 6854)
 

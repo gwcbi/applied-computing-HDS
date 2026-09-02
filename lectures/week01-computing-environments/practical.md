@@ -232,12 +232,16 @@ No commits yet
 Untracked files:
   patients.csv
   patients_by_age.csv
-  scripts/
 ```
 
 `git init` turns the current folder into a repo. `git status` is the
 command you will run more than any other — it always tells you where you
 stand.
+
+> **Note:** you won't see `scripts/` listed here even though you made it —
+> Git only tracks files, not empty directories, so an empty folder stays
+> invisible to `git status` until something is inside it. If your output
+> is missing that line, nothing is wrong.
 
 ### 2.3 Tracking changes (`add`, `commit`, `log`)
 

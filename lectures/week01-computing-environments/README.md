@@ -136,6 +136,14 @@ need it for every lab this semester.
 
 ## Choosing an IDE for Data Science
 
+> **Quick answer, if you don't want to read the rest of this section
+> today:** install **PyCharm** (free for GW students, see below) unless
+> you already have muscle memory with VS Code, in which case use that
+> instead. Either is fine — just pick one now, don't install both, and
+> don't spend today's 5-minute install budget deliberating over it. The
+> full reasoning and a comparison of every option is below if you want it
+> later, but it's optional reading, not part of today's setup.
+
 ### What is an IDE, and why use one?
 
 An **I**ntegrated **D**evelopment **E**nvironment bundles the tools you'd

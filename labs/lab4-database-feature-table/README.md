@@ -36,10 +36,18 @@ multiple visits, visits have multiple lab results).
 
 ## Deliverable
 
+A link to your GitHub repository — see the [labs overview](../README.md)
+for how to submit and the repo/README requirements shared across all labs
+(public repo, `README.md`, `AI_USAGE.md`, reproducible structure as in
+[Lab 1](../lab1-reproducible-setup/README.md)).
+
+Your repo should contain:
 - Your SQL queries (as a `.sql` file or embedded in your script)
-- Your script that builds the final feature table
+- Your script that builds the final feature table, with usage notes in
+  `README.md` (what command runs it, what it expects, what it outputs)
 - The resulting feature table (CSV)
 - The data dictionary
+- Your schema write-up from Task 1 (in `README.md` or a separate file)
 
 ## Learning objectives
 

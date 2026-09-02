@@ -39,3 +39,4 @@ data/processed/*
 *.bak
 
 DRAFT*
+.claude/worktrees/

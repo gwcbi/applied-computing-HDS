@@ -38,8 +38,16 @@ Choose **one** file (or both, for extra depth) as your working dataset.
 
 ## Deliverable
 
-- Your regex script and its output table
-- Your AI-assisted extraction (prompts + output table)
+A link to your GitHub repository — see the [labs overview](../README.md)
+for how to submit and the repo/README requirements shared across all labs
+(public repo, `README.md`, `AI_USAGE.md`, reproducible structure as in
+[Lab 1](../lab1-reproducible-setup/README.md)).
+
+Your repo should contain:
+- Your regex script and its output table, with usage notes in `README.md`
+  (what command runs it, what input it expects, what output it produces)
+- Your AI-assisted extraction (prompts + output table — the prompts can go
+  in `AI_USAGE.md`, per Task 2)
 - A short comparison write-up (~1 page): agreement/disagreement, failure
   modes, and which approach you'd trust for a real dataset and why
 
