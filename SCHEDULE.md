@@ -30,7 +30,11 @@ Schedule is identical for the graduate (PUBH 6854) and undergraduate (PUBH 4201)
 ### Week 3 — Reproducible Research Notebooks
 - **No class:** Sep 7 · **Lecture:** Sep 9
 - Topics: Computational notebooks (Jupyter, Colab, R Markdown); using generative AI for setup and troubleshooting
-- Required readings: DSF Chapter 1; [R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/)
+- Required readings: 
+  - DSF Chapter 1 (*Open-Source Tools for Data Science* — R/RStudio, Python/Anaconda, and Colab setup); 
+  - [Introduction to Jupyter Notebooks](https://carpentries-incubator.github.io/jupyter-notebooks-intro/) (Carpentries Incubator); 
+  - [R Markdown: Introduction](https://rmarkdown.rstudio.com/lesson-1.html) and [How It Works](https://rmarkdown.rstudio.com/lesson-2.html) (Posit); 
+  - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) (Xie, Allaire & Grolemund), Ch. 2–3
 - Hands-on exercise: Build and run a short reproducible notebook (Jupyter or R Markdown) from a provided template; use generative AI to diagnose a seeded kernel/environment error
 - Deliverable: **Lab 2 — Analysis Notebook** (due Wed, Sep 16, 11:59pm)
 - Learning objectives: Create and compile a research notebook in R and Python

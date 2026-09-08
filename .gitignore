@@ -14,9 +14,19 @@ venv/
 renv/library/
 renv/staging/
 
-# Data (raw data usually not committed — track via README/download scripts instead)
-data/raw/*
-!data/raw/.gitkeep
+# Data (raw data files usually not committed — track via SOURCE.md/download
+# scripts instead). Ignore by extension, not by blanket directory, so
+# SOURCE.md files (docs, not data) stay tracked without needing a
+# directory-unignore workaround.
+data/raw/**/*.csv
+data/raw/**/*.csv.gz
+data/raw/**/*.tsv
+data/raw/**/*.tsv.gz
+data/raw/**/*.txt
+data/raw/**/*.txt.gz
+data/raw/**/*.gz
+data/raw/**/*.zip
+data/raw/**/*.parquet
 data/processed/*
 !data/processed/.gitkeep
 

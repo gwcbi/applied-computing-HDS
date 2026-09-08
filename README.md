@@ -27,7 +27,7 @@ All deadlines are at 11:59pm (ET) unless otherwise noted.
 
 ## Office Hours
 
-I will typically hold office hours 2:30 - 3:30 on Monday or Wednesday (after class over in SEH 7675).
+I will typically hold office hours 2:30 - 3:30 on Monday or Wednesday (location TBD).
 
 Schedule (subject to change):
 
@@ -56,6 +56,7 @@ Additional office hours are by appointment.
 - `labs/` — the 5 graded lab assignments; see [`labs/README.md`](labs/README.md) for the full list, due dates, and submission instructions shared by all labs
 - `project/` — final project requirements, proposal template, rubrics, example project ideas
 - `environment/` — environment/dependency files (conda, renv, Docker) for the course
+- `setup/` — one-time computer setup instructions, by OS ([`SETUP.md`](setup/SETUP.md) is the entry point)
 - `data/` — `raw/` (input datasets used in labs/lectures) and `processed/`
 - `resources/` — supplemental readings and slide assets
 
@@ -71,7 +72,7 @@ See [`SCHEDULE.md`](SCHEDULE.md) for the full session-by-session schedule and [`
 
 ## Setup
 
-Setup instructions and environment files are in `environment/` (to be added — see Lab 1).
+One-time computer setup (terminal, git, conda/mamba, uv, R/renv, Docker, an IDE) lives in [`setup/SETUP.md`](setup/SETUP.md), split out by OS ([Windows](setup/WINDOWS.md), [macOS](setup/MACOS.md), [Linux](setup/LINUX.md)). The course's own reference environment files (used to build/test lecture demos and lab solutions) are in [`environment/`](environment/).
 
 ## License
 

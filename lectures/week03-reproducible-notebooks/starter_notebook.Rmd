@@ -1,0 +1,52 @@
+---
+title: "Week 3 Practical -- Starter Notebook (R Markdown)"
+output: html_document
+---
+
+This notebook has **one bug**. It was "tested" by running chunks out of
+order in the RStudio console while writing it, so it happened to work in
+that session -- but the order on the page doesn't match the order the
+chunks were actually run in.
+
+**Your task:**
+
+1. Click **Knit** (or run `rmarkdown::render("starter_notebook.Rmd")`)
+   and watch it fail.
+2. Diagnose the error with an AI assistant (paste the exact error text).
+3. Fix it, then **Knit** again until it completes clean, from a fresh R
+   session.
+4. Add one new Markdown section and one new R chunk of your own below the
+   last chunk.
+5. Knit one more time to confirm your addition doesn't break anything.
+6. The rendered `starter_notebook.html` this produces *is* your export --
+   nothing extra to run for that step.
+
+## Summarize by site
+
+```{r summarize-bug}
+patients %>%
+  group_by(site) %>%
+  summarize(mean_age = mean(age))
+```
+
+## Setup
+
+(this belongs above the chunk that uses it -- that's the bug)
+
+```{r setup}
+library(dplyr)
+
+patients <- data.frame(
+  patient_id = c("P001", "P002", "P003", "P004", "P005"),
+  age = c(54, 61, 47, 72, 39),
+  site = c("DC", "MD", "DC", "VA", "MD")
+)
+```
+
+## Count by site
+
+```{r count-by-site}
+patients %>%
+  group_by(site) %>%
+  summarize(n = n())
+```
