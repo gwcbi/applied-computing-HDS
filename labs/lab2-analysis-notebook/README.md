@@ -97,11 +97,3 @@ Your repo should contain:
 ## Learning objectives
 
 - Create and compile a research notebook in R and Python
-
-## Open item
-
-"Suggestions" above point to datasets that don't exist in this repo yet
-(`data/raw/` is currently empty — see Phase 3 note). Before Week 3, either
-populate `data/raw/lab2-*/` with a vetted dataset + SOURCE.md, or confirm
-you want students to source their own (which is more open-ended but harder
-to grade consistently).
