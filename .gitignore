@@ -50,3 +50,4 @@ data/processed/*
 
 DRAFT*
 .claude/worktrees/
+instructor/student_submissions/*

@@ -112,3 +112,19 @@ same discipline this week's demo and practical teach -- see
   framing ("this is exactly what Lab 2 grades") assumes the "re-runs
   top-to-bottom" criterion is checked in some form, which is stated but
   not yet mechanized.
+
+## Sep 8, 2026 -- added a check-in slide (planning input for Week 4)
+
+Discussed with Matthew whether to move genAI-basics content earlier in the
+course (currently backloaded to Weeks 11-15) given real Week 1-2 setup pain
+(e.g. a Windows student stuck with no "just troubleshoot with AI" option)
+and a batch of Lab 1 extension requests. Decision: don't restructure Module
+3 -- instead gauge the room first. Added a new slide (now slide 3, right
+after the Week 1/2/3 recap, before "The Concept") with three show-of-hands
+questions: who had Lab 1 go smoothly, who got stuck and rescued (any way),
+and of those rescues how many were via AI. Lecture trimmed 20->18 min to
+pay for the 2-minute insert -- see `run-of-show.md` for the updated table
+and its speaker notes for the verbal chat-vs-agentic follow-up question.
+Matthew will read the room Sep 9 and use it to decide Week 4's content
+(a short "how to troubleshoot with AI" segment is the leading candidate --
+see project memory for the full discussion).
