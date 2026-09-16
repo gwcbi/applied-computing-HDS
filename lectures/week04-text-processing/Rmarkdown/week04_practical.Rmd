@@ -1,0 +1,182 @@
+---
+title: "Week 4 Practical: Text Processing"
+subtitle: "Regex + AI-Assisted Extraction — PUBH 6854 / PUBH 4201"
+date: "Wednesday, Sep 16, 2026"
+output: html_document
+---
+
+Monday's lecture gave AI-assisted extraction a 5-minute preview on purpose —
+this is where it gets real time. Today: regex hands-on, then a proper deep
+dive into AI-assisted extraction and how to troubleshoot with AI, then a
+head-to-head comparison using the same data.
+
+**Data:** `../inclass_headers.fasta` — 9 messy FASTA headers, each with
+sample ID, organism, and gene fields, formatted inconsistently on purpose:
+pipe-delimited, colon-delimited, semicolon-delimited, and space-separated
+variants; several headers missing a length field entirely (one explicitly
+marked `len:NA`); and one hyphenated gene symbol (`HLA-DRB1`). This is a
+different, smaller set than Lab 3's dataset — today's answers won't just
+transfer over.
+
+## Setup
+
+Minimal setup on purpose — if you don't already have `stringr` (e.g. from
+Week 2's `renv` work, or as part of `tidyverse`), install it once:
+
+```{r install, eval=FALSE}
+install.packages("stringr")
+```
+
+```{r setup, message=FALSE}
+library(stringr)
+
+headers <- readLines("../inclass_headers.fasta")
+headers <- headers[str_starts(headers, ">")]
+headers
+```
+
+## Part 1 — Regex extraction (20 min)
+
+Working in pairs, write regex patterns to extract three fields from every
+header:
+
+1. **Sample ID** (e.g. `seq101`, `Seq102`, `seq-103` — note the inconsistent
+   casing and punctuation)
+2. **Organism** (mostly `Homo_sapiens` / `Homo sapiens` / `Hsapiens` —
+   another inconsistency to handle, or explicitly decide to ignore)
+3. **Gene** (`KRAS`, `PTEN`, `TP53`, and one `HLA-DRB1` — the hyphen from
+   Monday's live-code lesson shows up for real here)
+
+The `gene` pattern below is filled in already — it's Monday's live-code
+pattern, extended to handle both `gene=` and `gene:`. You'll need to write
+your own patterns for `sample_id` and `organism`.
+
+**Test against all nine headers, not just the first one or two** — several
+are deliberately built to break a pattern that only handles the "clean"
+cases.
+
+```{r part1-patterns}
+sample_id_pattern <- "TODO"                 # fill this in
+organism_pattern  <- "TODO"                 # fill this in
+gene_pattern      <- "(?i)gene[:=]([\\w-]+)" # Monday's pattern, extended for : and gene: (case-insensitive)
+
+extracted <- data.frame(
+  header    = headers,
+  sample_id = str_extract(headers, sample_id_pattern),
+  organism  = str_extract(headers, organism_pattern),
+  gene      = str_match(headers, gene_pattern)[, 2],
+  stringsAsFactors = FALSE
+)
+extracted
+```
+
+**Checkpoint:** by the end of Part 1, you should have three working
+patterns and a quick sanity check of each against the full table above —
+not full production code, just confidence that they hold up across all
+nine rows. No `NA`s in the `gene` column is a good sign; `NA`s in
+`sample_id` or `organism` mean your pattern doesn't handle every format
+yet.
+
+## Part 2 — Deep dive: AI-assisted extraction & troubleshooting with AI (25 min)
+
+This section is discussion-driven, not code-driven — your instructor will
+walk through this live. A short summary to have in front of you:
+
+### Writing a real extraction prompt
+
+A vague prompt ("extract the fields from this") gets a vague, inconsistent
+answer. A good extraction prompt is specific about:
+
+- **What fields you want, named explicitly** ("sample ID, organism, and
+  gene symbol")
+- **The exact input**, pasted in full — not summarized or retyped
+- **The output format you want** (a table, a list, CSV) so you can
+  actually compare it against your regex output
+- **What to do with a missing field** (leave blank? mark `NA`? — decide
+  this yourself, don't let the AI tool decide silently)
+
+### The chat-vs-agentic distinction
+
+Some AI tools just **explain** — they describe what a header contains and
+you still do the extraction. Others can **act** — actually run code and
+produce the extraction for you. Neither is strictly better, but you need
+to know which one you're using: an explaining tool is a starting point
+for your own regex or script; an acting tool is producing output you need
+to verify, not just accept.
+
+### The verification habit
+
+This is the part that matters most, because **AI extraction fails
+differently than regex does.** A broken regex either throws an error or
+visibly extracts the wrong thing (like the `HLA` truncation from Monday's
+demo — wrong, but noticeably short). AI extraction can fail with a
+completely confident, well-formatted, wrong answer — a hallucinated field
+that was never in the source text, or a "cleaned up" value that no longer
+matches what was actually written. There is no error message for this.
+
+**The habit:** for every field an AI tool extracts, spot-check it against
+the actual source text before you trust it.
+
+### Try it yourself
+
+Paste your extraction prompt and the AI's response here for one header, as
+a quick note to yourself — not graded, just so you have a record to refer
+back to in Part 3.
+
+> **Prompt:**
+>
+> **AI's answer:**
+
+## Part 3 — Hands-on: same task, via AI (15 min)
+
+Using the prompting approach from Part 2, run all nine headers through an
+AI tool and extract the same three fields (sample ID, organism, gene).
+Fill in what it gives you below, then compare against your Part 1 regex
+output.
+
+```{r part3-ai-results}
+ai_results <- data.frame(
+  header    = headers,
+  sample_id = NA_character_,
+  organism  = NA_character_,
+  gene      = NA_character_,
+  stringsAsFactors = FALSE
+)
+# Fill in by hand from your AI tool's output, e.g.:
+# ai_results$gene <- c("KRAS", "PTEN", "TP53", "KRAS", "PTEN", "TP53", "KRAS", "PTEN", "HLA-DRB1")
+ai_results
+```
+
+```{r part3-compare}
+comparison <- data.frame(
+  header     = headers,
+  regex_gene = extracted$gene,
+  ai_gene    = ai_results$gene,
+  agree      = extracted$gene == ai_results$gene,
+  stringsAsFactors = FALSE
+)
+comparison
+```
+
+For each of the 27 field values (9 headers × 3 fields):
+
+- Do they agree?
+- If not, which one is actually right? (Go back to the source text — this
+  is the verification habit from Part 2, applied for real.)
+- Is there a pattern to where they disagree? (Hint: check the `HLA-DRB1`
+  row and the rows missing a length field particularly closely.)
+
+## Discussion (5 min)
+
+When would you reach for regex vs. AI on a new extraction task you haven't
+seen before? There's no single right answer — the point is to leave with a
+real basis for that decision, not just "AI is easier" or "regex is more
+reliable" as a slogan.
+
+## Wrap-up
+
+| | |
+|---|---|
+| **Due tonight, 11:59pm** | Lab 2: Analysis Notebook |
+| **Next week** | Lab 3: Parsing Messy Health or Genomic Data (assigned Week 5, due Sep 30) — builds directly on today, with a new dataset |
+| **Keep for later** | The prompting checklist and troubleshoot-with-AI steps above apply well beyond text extraction — worth remembering for Week 7 (AI-assisted debugging) and Week 8 (AI-assisted SQL) |

@@ -1,0 +1,20 @@
+name: notebooks
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyterlab
+
+# Usage:
+#   mamba env create -f environment.yml
+#   conda activate notebooks
+#
+# This is the same "notebooks" environment Week 3's README had you build
+# (`mamba create -n notebooks python=3.12 jupyterlab -c conda-forge`) — if
+# you still have it from Week 3 / Lab 2, you already have everything this
+# week's practical needs and don't need to do anything here. This file
+# exists so you can recreate that environment from scratch if you ever
+# need to (new machine, deleted environment, etc.).
+#
+# No extra packages beyond jupyterlab: Week 4's notebook only uses Python's
+# built-in `re` module.

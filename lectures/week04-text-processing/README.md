@@ -7,9 +7,120 @@ your only option either. Monday's lecture covers the regex fundamentals;
 Wednesday's practical goes deep on AI-assisted extraction and how to
 troubleshoot with AI, alongside hands-on regex practice.
 
-No new installs this week — everything below uses tools you already have
-(Python's built-in `re` module, R's built-in `stringr`/base regex, or any
-text editor's find/replace) plus whichever AI assistant you're already using.
+Minimal setup this week — everything below uses tools you already have
+(Python's built-in `re` module, R's `stringr`, or any text editor's
+find/replace) plus whichever AI assistant you're already using. See
+"Wednesday's practical" below for the one optional install (`stringr`, if
+you don't already have it).
+
+## Wednesday's practical: interactive notebooks
+
+Wednesday's practical lives in this folder as a working notebook, not just
+a document to read — an R Markdown version (`Rmarkdown/week04_practical.Rmd`)
+and a Jupyter version (`Jupyter/week04_practical.ipynb`), both with the same
+content as `practical.md`, but set up so you actually run the code during
+class instead of reading about it. Pick whichever language you're using for
+Lab 2 — you don't need both.
+
+### 1. Get the latest course materials
+
+If you already cloned the course repo in Week 1, update it:
+
+```console
+$ cd applied-computing-HDS   # wherever you cloned it back in Week 1
+$ git pull
+```
+
+Cloning for the first time:
+
+```console
+$ git clone https://github.com/gwcbi/applied-computing-HDS.git
+$ cd applied-computing-HDS
+```
+
+Either way, you should now have `lectures/week04-text-processing/` with
+this README plus `Rmarkdown/` and `Jupyter/` subfolders.
+
+<details>
+<summary><strong>If <code>git pull</code> fails</strong></summary>
+
+If you cloned earlier and have your own uncommitted changes sitting around
+(e.g. you edited a previous week's notebook and never committed it),
+`git pull` will refuse and print something like:
+
+```
+error: Your local changes to the following files would be overwritten by merge:
+    lectures/week03-reproducible-notebooks/starter_notebook.ipynb
+Please commit your changes or stash them before you merge.
+```
+
+The fastest fix, if you don't need to keep those specific changes right
+now:
+
+```console
+$ git stash        # temporarily shelves your uncommitted changes
+$ git pull         # now succeeds
+$ git stash pop    # brings your changes back, merged with the update
+```
+
+`git stash` alone (without `pop`) is completely safe — nothing is deleted,
+your changes are just set aside until you run `git stash pop` later. If
+`git stash pop` itself reports a conflict (you edited the exact same lines
+the update changed), stop and bring it to office hours rather than
+guessing — resolving a merge conflict wrong is an easy way to lose work,
+and this is a two-minute fix in person.
+
+</details>
+
+### 2. R: `Rmarkdown/week04_practical.Rmd` in RStudio
+
+1. In RStudio: **File → Open File...** → `Rmarkdown/week04_practical.Rmd`
+   (or just double-click the file in your OS file browser — RStudio should
+   open it automatically).
+2. If you don't already have `stringr` (most of you will, from Week 2's
+   `renv` work or via `tidyverse`), install it once in the Console:
+   ```r
+   install.packages("stringr")
+   ```
+3. Work through the notebook chunk by chunk (**Run → Run Current Chunk**,
+   or Ctrl/Cmd+Shift+Enter), top to bottom.
+
+We're **not** setting up a dedicated `renv` project for this practical —
+it's one 75-minute in-class file, not a graded deliverable, and having 30
+people run `renv::init()` simultaneously on classroom wifi is more friction
+than the exercise is worth. Just install `stringr` directly into whatever R
+setup you already have. Lab 2 and later labs are where `renv`
+reproducibility actually gets graded — keep using it there.
+
+### 3. Python: `Jupyter/week04_practical.ipynb` in JupyterLab
+
+You already have everything this needs from Week 3's setup:
+
+```console
+$ conda activate notebooks
+$ cd lectures/week04-text-processing/Jupyter
+$ jupyter lab
+```
+
+JupyterLab opens in your browser — click `week04_practical.ipynb` in the
+file browser on the left, then work through it cell by cell (Shift+Enter
+runs a cell and moves to the next one).
+
+**No new installs** — this notebook only uses Python's built-in `re`
+module. If you ever need to rebuild the `notebooks` environment from
+scratch (new machine, deleted environment), `Jupyter/environment.yml` does
+it — run this from the `Jupyter/` folder you just `cd`'d into above:
+
+```console
+$ mamba env create -f environment.yml
+$ conda activate notebooks
+```
+
+**Windows:** do all of the above inside **WSL2** (the Ubuntu terminal), not
+PowerShell or Command Prompt — same as every other week since the
+[Windows setup guide](../../setup/WINDOWS.md). Your `conda`/`mamba` and
+`jupyter lab` need to be the ones installed *inside* WSL2, not a separate
+Windows-native install.
 
 ## Quick reference
 
