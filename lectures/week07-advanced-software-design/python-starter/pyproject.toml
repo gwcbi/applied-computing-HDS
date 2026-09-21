@@ -1,0 +1,17 @@
+[project]
+name = "patientkit"
+version = "0.1.0"
+description = "Minimal example package for Week 7's packaging/debugging exercise (PUBH 6854/4201)."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Your Name", email = "you@example.com" },
+]
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -4,8 +4,9 @@
   sequence data). Random seed fixed for reproducibility of the generator.
 - **License / terms of use:** No restrictions — instructor-created, safe to
   distribute to students.
-- **Generated:** 2026-08-08, via a Python script (not yet committed to
-  repo — inline generation, see instructor notes in `labs/lab3-parsing-messy-data/README.md`).
+- **Generated:** 2026-08-08, via `generate_data.py` (in this directory,
+  seeded for reproducibility — rerun it to regenerate an identical
+  ground-truth table if an answer key is needed for grading).
 - **PHI/PII status:** None — all names, dates, and IDs are randomly generated
   and do not correspond to real people.
 - **Used in:** Lab 3 (Parsing Messy Health or Genomic Data)
@@ -21,9 +22,14 @@
 
 ## Open item
 
-This is a **placeholder synthetic dataset** generated quickly to unblock
-Lab 3 design. Before the semester starts, consider whether you want a real
-(de-identified/public) messy dataset instead for authenticity — e.g., an
-actual public GEO sample sheet or a public health open-data extract known
-to have messy formatting. The synthetic version is safe and usable as-is,
-but a real example may be more motivating for students.
+This is a **placeholder synthetic dataset**, still in place as of the
+Sep 2026 Lab 3 rework (2026-09-18) — Lab 3 is due Sep 30, so there's limited
+runway left to swap in a real dataset this semester without risking a
+last-minute change students would need to adjust to. The synthetic version
+is safe, deterministic (reproducible via `generate_data.py`), and already
+exercises the intended regex/AI-extraction failure modes, so it's usable
+as-is for this run of the course. Worth revisiting for a future semester: a
+real (de-identified/public) messy dataset — e.g., an actual public GEO
+sample sheet or a public health open-data extract known to have messy
+formatting — would likely be more motivating for students than synthetic
+data, even though it's harder to control for specific failure modes.

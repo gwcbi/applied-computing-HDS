@@ -50,7 +50,8 @@ Schedule is identical for the graduate (PUBH 6854) and undergraduate (PUBH 4201)
 ### Week 5 — Data Wrangling
 - **Lecture:** Sep 21 · **Lecture:** Sep 23
 - Topics: Data frame ecosystems (R/tidyverse, pandas, polars); constructing samples × features × metadata tables; introduction to analytic data readiness
-- Required readings: PCB Chapters 10–11; DSF Chapters 3–7
+- Required readings: 
+  - DSF Chapters 3–7, 10
 - Hands-on exercise: Build a small feature table from raw inputs
 - Deliverable: **Lab 3 — Parsing Messy Health or Genomic Data** (due Wed, Sep 30, 11:59pm)
 - Learning objectives: Transform raw data into structured analytic formats; understand data readiness for modeling and inference
@@ -64,12 +65,15 @@ Schedule is identical for the graduate (PUBH 6854) and undergraduate (PUBH 4201)
 ### Week 6 — Software Design
 - **Lecture:** Sep 28 · **Practical:** Sep 30
 - Topics: Software design paradigms (procedural, object-oriented, functional); modular programming; version control
-- Required readings: [Python modules documentation](https://docs.python.org/3/tutorial/modules.html); [Git Tutorial](https://git-scm.com/docs/gittutorial)
+- Required readings: 
+  - [Python modules documentation](https://docs.python.org/3/tutorial/modules.html)
+  - [Git Tutorial](https://git-scm.com/docs/gittutorial)
 
 ### Week 7 — Advanced Software Design
 - **Lecture:** Oct 5 · **Practical:** Oct 7
 - Topics: Distributing software — packaging in R and Python; debugging workflows in software IDEs (PyCharm, VS Code); using generative AI assistance for developing, debugging, refactoring
-- Required readings: [R Packages](https://r-pkgs.org/)
+- Required readings: 
+  - [R Packages](https://r-pkgs.org/)
 - Learning objectives: Build and debug code that is modular, reusable, and efficiently uses generative AI; fundamental concepts and key implementation details for R and Python packages
 - **Final Project Proposals due Oct 7**
 

@@ -8,10 +8,10 @@
 | Documentation | 15% | README explains what the project does and how to run it; functions/scripts have docstrings or comments where non-obvious |
 | Version control hygiene | 15% | Meaningful commit history showing iterative work (not one commit dump at the deadline) — a light signal against last-minute AI-generated submissions |
 
-## Open item
+## Resolved
 
-"Version control hygiene" assumes students use git for the project — this
-isn't explicitly required elsewhere in the syllabus. Confirm this is an
-expectation you want to hold students to, and if so, state it explicitly in
-`project/requirements.md` and to students early (Week 7, when Git is
-covered).
+"Version control hygiene" assumes students use git for the project. As of
+the Week 6 build (Sep 2026), this expectation is now stated explicitly to
+students in `lectures/week06-software-design/README.md` and `practical.md`
+(git is covered Week 6, not Week 7 — this item previously cited the wrong
+week). Still open: whether to also add it to `project/requirements.md`.

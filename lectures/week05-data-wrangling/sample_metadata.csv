@@ -1,0 +1,17 @@
+sample_id,subject_id,age,sex,site,treatment_group,collection_date
+S01,SUBJ101,63,M,Site3,control,2026-03-26
+S02,SUBJ102,68,F,Site2,control,2026-02-21
+S03,SUBJ103,27,F,Site1,control,2026-03-16
+S04,SUBJ104,39,M,Site3,control,2026-01-19
+S05,SUBJ105,39,F,Site3,control,2026-02-14
+S06,SUBJ106,41,F,Site2,control,2026-02-25
+S07,SUBJ107,75,F,Site1,control,2026-05-20
+S08,SUBJ108,52,F,Site1,control,2026-01-28
+S09,SUBJ109,24,F,Site1,treatment,2026-02-28
+S10,SUBJ110,34,M,Site2,treatment,2026-02-18
+S11,SUBJ111,67,F,Site1,treatment,2026-06-07
+S12,SUBJ112,48,M,Site1,treatment,2026-03-14
+S13,SUBJ113,,F,Site2,treatment,2026-01-11
+S14,SUBJ114,43,F,Site3,treatment,2026-06-23
+S15,SUBJ115,45,F,Site2,treatment,2026-03-27
+S16,SUBJ116,43,M,Site3,treatment,2026-03-06

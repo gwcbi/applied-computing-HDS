@@ -1,0 +1,224 @@
+---
+title: "Week 5 Practical: Data Wrangling"
+subtitle: "Data Frame Ecosystems + Building a Feature Table — PUBH 6854 / PUBH 4201"
+date: "Sep 21 & Sep 23, 2026"
+output: html_document
+---
+
+This one notebook covers both of this week's lecture days: **Part 1** is the
+tidyverse side of Day 1's data-frame-ecosystems live demo (the pandas/polars
+side lives in `Jupyter/week05_practical.ipynb` — pick whichever language
+you're using for Lab 3, you don't need both), and **Part 2** is Day 2's
+samples × features × metadata hands-on exercise.
+
+**Data:** `../gene_counts_long.csv`, `../sample_metadata.csv`,
+`../gene_metadata.csv` — a small synthetic gene-expression-style dataset
+built for this exercise (see `../SOURCE.md`). Deliberately **not** the Lab 3
+dataset — different shape, different gene panel, and clean-but-incomplete
+rather than messy, since the point here is the pivot/join/readiness
+workflow, not regex-style text parsing.
+
+## Setup
+
+If you don't already have `tidyr` (most of you will, from `tidyverse`),
+install it once:
+
+```{r install, eval=FALSE}
+install.packages("tidyr")
+```
+
+```{r setup, message=FALSE}
+library(dplyr)
+library(tidyr)
+
+counts <- read.csv("../gene_counts_long.csv", stringsAsFactors = FALSE)
+samples <- read.csv("../sample_metadata.csv", stringsAsFactors = FALSE)
+genes <- read.csv("../gene_metadata.csv", stringsAsFactors = FALSE)
+
+cat(nrow(counts), "count rows,", nrow(samples), "samples,", nrow(genes), "genes\n")
+head(counts)
+```
+
+## Part 1 — Data frame ecosystems: the same pipeline, three ways
+
+Monday's lecture walked through **filter → select → mutate → group-by/
+summarize → join** side by side in tidyverse, pandas, and polars. Below is
+the tidyverse half of that, using our actual data instead of the lecture's
+toy example. The pandas/polars version of every chunk here has a
+line-for-line equivalent in `Jupyter/week05_practical.ipynb` — worth
+skimming even if Python isn't your language this semester, just to see how
+the same concepts map across ecosystems.
+
+### Filter
+
+Keep only samples in the `treatment` group.
+
+```{r filter}
+treatment <- samples %>% filter(treatment_group == "treatment")
+cat("tidyverse:", nrow(treatment), "rows\n")
+head(treatment, 3)
+```
+
+### Select
+
+Keep only the columns we need for a quick site/group summary.
+
+```{r select}
+samples %>% select(sample_id, site, treatment_group) %>% head(3)
+```
+
+### Mutate
+
+Add a derived column — `log1p` of the raw count, a common transform for
+count data before modeling (compresses the right skew from a handful of
+very highly expressed genes like `GAPDH`/`ACTB`).
+
+```{r mutate}
+counts <- counts %>% mutate(log_count = log1p(raw_count))
+head(counts, 3)
+```
+
+### Group-by / summarize
+
+Mean raw count per gene, across all samples — a sanity check that
+housekeeping genes (`GAPDH`, `ACTB`) really are the highest-expressed, as
+`../gene_metadata.csv`'s `gene_class` column claims.
+
+```{r groupby}
+summary_tbl <- counts %>%
+  group_by(gene_id) %>%
+  summarize(mean_count = round(mean(raw_count), 1)) %>%
+  arrange(desc(mean_count))
+summary_tbl
+```
+
+### Join
+
+Attach sample-level metadata (site, treatment group, age) onto the
+long-format counts table — this is the join that sets up Part 2's feature
+table.
+
+```{r join}
+merged <- counts %>% left_join(samples, by = "sample_id")
+head(merged, 3)
+```
+
+**Checkpoint:** `merged` should have the same number of rows as `counts` (a
+left join keeps every count row, even if — hypothetically — a `sample_id`
+had no metadata match) and the same number of columns as `counts` +
+`samples` minus the shared `sample_id` key. If your row count changed,
+that's usually a sign of a many-to-many join somewhere — worth tracking
+down rather than ignoring.
+
+## Wide vs. long / tidy data
+
+**Tidy data principle:** one observation per row, one variable per column.
+`gene_counts_long.csv` is tidy *for a "count" observation* (each row is one
+sample-gene measurement) — but it's the wrong shape for "one row per
+sample," which is what most downstream modeling and plotting tools expect.
+Getting from one to the other is a **pivot** (long → wide) or its inverse
+(wide → long), not a join — no new information is added, only reshaped.
+
+Below: pivot `counts` from long (one row per sample×gene) to wide (one row
+per sample, one column per gene) — the samples × features shape Part 2
+builds on.
+
+```{r pivot}
+wide <- counts %>%
+  select(sample_id, gene_id, raw_count) %>%
+  pivot_wider(names_from = gene_id, values_from = raw_count)
+wide
+```
+
+Notice the `NA` cells — those are the ~6% of sample×gene pairs that were
+never in `gene_counts_long.csv` to begin with (see `../SOURCE.md`). The
+pivot didn't create this missingness, it just made it *visible* as actual
+cells instead of absent rows. That's exactly the kind of thing "analytic
+data readiness" means catching before you hand a table to a model — see
+Part 2.
+
+## Part 2 — Constructing a samples × features × metadata table (Day 2)
+
+**The canonical shape:** one row per sample, one column per feature (here,
+genes), plus sample-level metadata columns (age, sex, site,
+treatment_group) either alongside the feature columns or joinable by
+`sample_id`. This is the shape nearly every downstream analysis —
+statistical modeling, ML, visualization — expects.
+
+**Recap of the pieces:**
+
+- `gene_counts_long.csv` — raw pipeline export, long format (what Part 1
+  pivoted above)
+- `sample_metadata.csv` — one row per sample, clinical/demographic fields
+- `gene_metadata.csv` — one row per gene, feature-level annotation
+
+### Your turn: build the full feature table
+
+Using `wide` from above, join in `sample_metadata.csv` so every row has
+both the gene columns *and* the sample metadata. Fill in the chunk below.
+
+```{r feature-table}
+# TODO: left_join `wide` and `samples` on sample_id
+feature_table <- wide %>% left_join(samples, by = "sample_id")
+feature_table
+```
+
+### Data readiness check
+
+Before this table goes anywhere near a model, run through a short
+checklist — this is what "analytic data readiness" means concretely, not
+just an abstract idea:
+
+1. **Consistent types** — is every gene column numeric? Is `age` numeric
+   (watch for a blank cell silently turning a column into character)?
+2. **Documented missingness** — how many missing values, where, and do you
+   know *why* (dropped-out gene measurement vs. a metadata field nobody
+   filled in are different problems with different fixes)?
+3. **No leakage between metadata and features** — `treatment_group` is
+   useful to know, but would using it as a *feature* in a model that's
+   trying to predict treatment response be circular? (No single right
+   answer — the point is to ask.)
+4. **Units resolved** — not an issue for raw counts here, but always check
+   for a real dataset (see Lab 3's `messy_samples.csv` for what it looks
+   like when this *isn't* resolved).
+
+Run the missingness check below, then answer the two questions after it.
+
+```{r missingness}
+# TODO: count NAs per column in feature_table
+colSums(is.na(feature_table))
+```
+
+**Answer these (no need to write code — just think it through, same as
+the week's discussion prompt):**
+
+1. Which column(s) have the most missing values, and does that match what
+   `../SOURCE.md` told you to expect?
+2. `age` is missing for one sample. Before you decide how to handle it
+   (drop the row? impute the mean? leave it and let downstream tools
+   handle `NA`?) — what would you need to know first, and who would you
+   ask? (This is this week's discussion prompt, applied to your own
+   table.)
+
+### Optional extension: bring in feature-level metadata
+
+`gene_metadata.csv` has a `gene_class` column (`housekeeping`, `oncogene`,
+`cytokine`, ...). Try filtering `feature_table` down to just the cytokine
+genes (`IL6`, `TNF`) using `genes` to look up which columns those are — a
+small taste of how feature *and* sample metadata both matter when you're
+deciding what to include in an analysis.
+
+```{r cytokine-subset}
+# TODO (optional): filter genes to gene_class == "cytokine", get the
+# gene_id vector, and select just those columns (+ sample_id) from feature_table
+cytokine_genes <- genes %>% filter(gene_class == "cytokine") %>% pull(gene_id)
+feature_table %>% select(sample_id, all_of(cytokine_genes))
+```
+
+## Wrap-up
+
+| | |
+|---|---|
+| **Due Wed, Sep 30, 11:59pm** | Lab 3: Parsing Messy Health or Genomic Data |
+| **Keep for later** | This "samples × features × metadata" shape comes back directly in Week 8-9 (Lab 4: Database-Driven Feature Table) — same framing, different (relational-database) source data |
+| **Closes Module 1** | Environments (Wk1-2) → notebooks (Wk3) → text parsing (Wk4) → structured tables (Wk5) — Module 2 (Wk6+) shifts to software design |

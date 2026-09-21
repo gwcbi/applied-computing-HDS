@@ -114,8 +114,8 @@ A few things worth naming explicitly, since they trip people up:
 - [Pro Git](https://git-scm.com/book/en/v2) by Scott Chacon and Ben
   Straub — the canonical, free Git book. Chapter 1 ("Getting Started")
   covers the concepts on this page in more depth; later chapters cover
-  branching and merging, which we don't use this semester but which
-  you'll want once you're collaborating with others on the same repo.
+  branching and merging in more depth than Week 6's practical covers,
+  useful once you're collaborating with others on the same repo.
 - [Software Carpentry's Git
   Novice](https://swcarpentry.github.io/git-novice/) lesson — the same
   hands-on style as Week 1's practical (which adapts from it directly).

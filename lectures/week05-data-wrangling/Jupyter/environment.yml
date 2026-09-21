@@ -1,0 +1,27 @@
+name: notebooks
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyterlab
+  - pandas
+  - pip
+  - pip:
+      - polars
+
+# Usage:
+#   mamba env create -f environment.yml
+#   conda activate notebooks
+#
+# This extends the same "notebooks" environment from Week 3/Lab 2 and
+# Week 4's practical (`mamba create -n notebooks python=3.12 jupyterlab
+# -c conda-forge`) with the two packages this week's practical needs:
+# pandas (most of you already have this from Lab 2) and polars (new this
+# week — not on conda-forge for all platforms in a way that plays nicely
+# with a mixed conda/pip env, so it's installed via pip here).
+#
+# Already have a "notebooks" env from a previous week? Don't recreate it
+# from scratch — just add what's missing:
+#   $ conda activate notebooks
+#   $ conda install pandas -c conda-forge   # if you don't already have it
+#   $ pip install polars

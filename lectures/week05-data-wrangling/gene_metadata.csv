@@ -1,0 +1,9 @@
+gene_id,chromosome,gene_class
+GAPDH,chr12,housekeeping
+ACTB,chr7,housekeeping
+MYC,chr8,oncogene
+IL6,chr7,cytokine
+TNF,chr6,cytokine
+VEGFA,chr6,growth_factor
+CDKN2A,chr9,tumor_suppressor
+STAT3,chr17,transcription_factor

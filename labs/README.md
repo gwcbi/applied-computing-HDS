@@ -6,7 +6,8 @@ the full grading breakdown and course policies.
 
 **PUBH 6854 (graduate):** all 5 labs, including the graduate addendum in
 each, are required for full credit.
-**PUBH 4201 (undergraduate):** labs are optional, for extra credit.
+
+**PUBH 4201 (undergraduate):** graduate tasks are optional, may be completed for extra credit.
 
 | Lab | Due | README | Rubric |
 |---|---|---|---|
@@ -21,7 +22,18 @@ course schedule.
 
 ## How to submit
 
-Every lab is submitted the same way, on Blackboard:
+### Separate Repositories & Consistent Directory Structure
+
+A core principle of this course is learning how to structure software projects predictably. In professional software development, teams rely heavily on **established directory conventions**—standardized rules for where files belong and what they are named. These conventions are essential for automation; CI/CD pipelines and automated grading scripts rely on predictable structures so they can build, test, and evaluate your code without custom configuration for every student.
+
+To build this professional habit, **each lab must be submitted as its own separate, public GitHub repository**, with all core code, configuration files, and documentation located at the **repository root**. Because there are five labs, you will have **five distinct GitHub repositories**. Keeping each project modular prevents cross-lab dependencies, maintains a clean commit history for every assignment, and ensures automated grading tools can evaluate your submissions reliably.
+
+### Blackboard submission
+
+Submit your lab on Blackboard.
+I am using the Blackboard timestamp as your submission time, 
+but will be grading whatever is currently in your repo (main branch) when I clone.
+_(i.e. don't make changes or delete your repo until you've been notified of your grade)_
 
 1. Put a link to your GitHub repository in the **"Create Submission"**
    field. That field should contain **only the link** — nothing else.

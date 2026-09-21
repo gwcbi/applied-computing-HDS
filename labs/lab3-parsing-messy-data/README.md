@@ -17,7 +17,9 @@ when each is appropriate.
 - `messy_sequences.fasta` — 8 sequences with inconsistent FASTA header
   formats.
 
-Choose **one** file (or both, for extra depth) as your working dataset.
+**PUBH 4201 (undergraduate):** choose **one** file as your working dataset.
+**PUBH 6854 (graduate):** work with **both** files (required — see the
+graduate addendum below).
 
 ## Tasks
 
@@ -36,6 +38,23 @@ Choose **one** file (or both, for extra depth) as your working dataset.
 4. **Identify failure modes:** Find at least 2 specific records where one or
    both approaches got something wrong (or ambiguous), and explain why.
 
+## Graduate addendum (PUBH 6854 required; PUBH 4201 optional extra credit)
+
+Do Tasks 1–4 above on **both** `messy_samples.csv` and
+`messy_sequences.fasta` (not just one), then take your cleaned
+`messy_samples.csv` output one step further using [Week 5](../../lectures/week05-data-wrangling/README.md)'s
+framing: reshape it into a **samples × features × metadata** table —
+one row per sample, feature columns pulled from the cleaned record fields,
+with a short note on **analytic readiness** (are types consistent? is
+missingness documented rather than silently dropped? are units resolved to
+one system?). This is the same "raw file → structured analytic table"
+workflow Week 5 covers, applied to your own Lab 3 output instead of a new
+dataset — a deliberate callback, not new material.
+
+Add this as a short section in your write-up (not a separate deliverable):
+what the samples × features × metadata table looks like, and 2–3 sentences
+on what you'd still need to resolve before it's modeling-ready.
+
 ## Deliverable
 
 A link to your GitHub repository — see the [labs overview](../README.md)
@@ -48,18 +67,23 @@ Your repo should contain:
   (what command runs it, what input it expects, what output it produces)
 - Your AI-assisted extraction (prompts + output table — the prompts can go
   in `AI_USAGE.md`, per Task 2)
-- A short comparison write-up (~1 page): agreement/disagreement, failure
-  modes, and which approach you'd trust for a real dataset and why
+- A short comparison write-up (~1 page, or ~1.5–2 pages if you completed
+  the graduate addendum): agreement/disagreement, failure modes, which
+  approach you'd trust for a real dataset and why, and (addendum) your
+  samples × features × metadata table + readiness notes
 
 ## Learning objectives
 
 - Clean real-world health data
 - Compare classical and AI-based parsing approaches
 - Identify failure modes in automated tools
+- (Graduate addendum) Transform cleaned records into an analytic-ready
+  samples × features × metadata table
 
 ## Instructor notes (not shown to students)
 
-The synthetic dataset was generator-seeded, so a reference "ground truth"
-clean table can be regenerated deterministically if an answer key is
-needed — flagged as an open item since the generator script itself isn't
-yet committed to the repo (currently only the output CSV/FASTA are).
+The synthetic dataset is generator-seeded (`data/raw/lab3-messy-data/generate_data.py`,
+seeds 42/7), so a reference "ground truth" clean table can be regenerated
+deterministically if an answer key is needed for grading. No automated
+grading script exists yet for this lab (unlike `scripts/grade_lab1.py`/
+`grade_lab2.py`) — see `rubric.md`'s grading-process note.
