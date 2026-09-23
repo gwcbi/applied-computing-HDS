@@ -113,6 +113,9 @@ Schedule is identical for the graduate (PUBH 6854) and undergraduate (PUBH 4201)
 - Topics: Integrating AI tools into development environments; hallucination detection and validation
 - Required readings: Instructor-provided notes
 - Ongoing: Final Project
+- **Final Project progress check-in:** brief, informal team check-ins
+  during the Nov 11 practical — no written submission, just be ready to
+  share status and flag any blockers
 
 ### Week 13 — Human-in-the-Loop Analytics
 - **Lecture:** Nov 16 · **Practical:** Nov 18
@@ -129,8 +132,9 @@ Schedule is identical for the graduate (PUBH 6854) and undergraduate (PUBH 4201)
 - Ongoing: Final Project
 
 ### Week 15 — Capstone Integration Project
-- **Practical:** Dec 7 · **Presentations:** Dec 9
-- Students present final projects
+- **Presentations:** Dec 7 and Dec 9
+- Final project presentations, split across both class sessions so every
+  team gets a slot (8 min + 2 min Q&A per team)
 
 ---
 

@@ -10,8 +10,7 @@
 
 ## Resolved
 
-"Version control hygiene" assumes students use git for the project. As of
-the Week 6 build (Sep 2026), this expectation is now stated explicitly to
-students in `lectures/week06-software-design/README.md` and `practical.md`
-(git is covered Week 6, not Week 7 — this item previously cited the wrong
-week). Still open: whether to also add it to `project/requirements.md`.
+"Version control hygiene" assumes students use git for the project. This is
+stated explicitly to students in `lectures/week06-software-design/README.md`
+and `practical.md` (git is covered Week 6), and is also listed as a
+required element in `project/requirements.md`.

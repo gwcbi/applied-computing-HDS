@@ -21,7 +21,7 @@ All deadlines are at 11:59pm (ET) unless otherwise noted.
 | Quiz 4                                       | Fri, Oct 30 |
 | Lab 5 — Scalable Analysis Workflow           | Wed, Nov 4 |
 | Quiz 5                                       | Fri, Nov 20 |
-| Final Project Presentation                   | Wed, Dec 9 |
+| Final Project Presentations                  | Mon–Wed, Dec 7–9 |
 | Final Project (final deliverable)            | Mon, Dec 14 |
 
 
@@ -46,7 +46,7 @@ Schedule (subject to change):
 | Mon Nov 9th | 2:30 - 3:30 | |
 | Wed Nov 18th | 2:30 - 3:30 | |
 | Wed Dec 2nd | 2:30 - 3:30 | |
-| Mon Dec 7th | 2:30 - 3:30 | Final Project presentations Wed 12/9 |
+| Mon Dec 7th | 2:30 - 3:30 | |
 
 Additional office hours are by appointment.
 

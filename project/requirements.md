@@ -2,7 +2,7 @@
 
 PUBH 6854 / 4201, Fall 2026. Worth 40% of the final grade (Proposal 10%,
 Presentation 20%, Report 35%, Code/documentation/deliverables 35% — see
-`rubrics/`). Proposal due **Oct 7**; presentations **Dec 9**.
+`rubrics/`). Proposal due **Oct 7**; presentations **Dec 7 and Dec 9**.
 
 ## Goal
 
@@ -46,35 +46,37 @@ techniques not yet taught.
   documented failure modes.
 - **Reproducibility:** someone other than the team should be able to re-run
   the analysis/tool from the repo (environment file, clear instructions).
+- **Version control:** the project should be developed in git with a
+  meaningful commit history showing iterative work, not a single commit
+  dumped at the deadline — same expectation as course labs from Week 6
+  onward (see `rubrics/code_rubric.md`).
 
 ## Deliverables
 
-1. **Proposal** (due Oct 7) — see `proposal/proposal_template.md`. Must be
-   approved by the instructor before work proceeds in earnest.
-2. **Code and documentation** — in a repo (can be a subfolder of the
+1. **Proposal** (due Oct 7) — see `proposal/proposal_template.md`. Reviewed
+   by the instructor before work proceeds in earnest; see
+   `rubrics/proposal_checklist.md` for how proposals are evaluated.
+2. **Progress check-in** (Nov 11, Week 12 practical) — a brief, informal
+   in-class check-in with the instructor. No written submission — just be
+   ready to describe where the project stands and flag any blockers.
+3. **Code and documentation** — in a repo (can be a subfolder of the
    student's own repo, doesn't need to live in the course repo), with a
    README, environment/dependency file, and inline documentation.
-3. **Report** — format appropriate to the project, **typically a journal
-   manuscript**. Other formats require instructor approval. Must include the
-   Contributions section for teams.
-4. **Presentation** — Dec 9, format/length TBD (see open items).
+4. **Report** — **PUBH 6854 (graduate):** format appropriate to the
+   project, typically a journal manuscript; other formats require
+   instructor approval. There's no fixed page count — length should match
+   the project's scope and complexity, long enough to clearly document what
+   was done and no longer. Must include the Contributions section for
+   teams. **PUBH 4201 (undergraduate):** a scientific poster by default
+   (may opt into the graduate report requirement instead) — see
+   `GRADING_AND_POLICIES.md`.
+5. **Presentation** — Dec 7 and Dec 9 (both class sessions, so every team
+   gets a slot): 8 minutes + 2 minutes Q&A per team. Slides are strongly
+   encouraged; a live demo is also welcome in place of, or alongside,
+   slides.
 
 ## Grading criteria (see `rubrics/` for detail)
 
 - Reproducibility
 - Code style and documentation
 - Communication of findings (report and presentation)
-
-## Open items (need instructor decision)
-
-- **Presentation length/format** — not yet specified (10 min? poster
-  session? slides required?). Needed before Week 11 so students can plan.
-- **Progress checkpoint** — Weeks 11–14 are marked "Assignments: Final
-  Project" with no separate lecture content; consider whether there's a
-  required check-in (e.g., a Week 12 short progress memo) or if it's
-  entirely self-directed until Dec 9.
-- **Undergrad (PUBH 4201) deliverable** — per the curriculum committee
-  talking points, undergrad final deliverable is a poster by default
-  (opt-in to grad-style report). This requirements doc is written for the
-  grad (6854) standard; a short 4201 addendum/poster rubric is not yet
-  written pending that course's separate approval.

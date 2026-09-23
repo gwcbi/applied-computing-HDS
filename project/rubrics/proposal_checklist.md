@@ -1,22 +1,24 @@
 # Proposal Approval Checklist (10% of final grade)
 
-Used by the instructor to approve/reject/request-revision on proposals due Oct 7.
+Used by the instructor to review proposals due Oct 7. This is mainly a
+feasibility and guidance check, not a strict gate — grading is
+intentionally lax. A team gets full credit for a genuine, thought-out
+effort on every section below, even if the instructor's feedback on that
+section is critical (e.g., "this scope is too large for 8 weeks"). Feedback
+on scope, data access, etc. is given to help teams calibrate before they
+invest the work — separately from the grade.
 
-| Criterion | Pass bar |
+| Criterion | What full credit looks like |
 |---|---|
-| Scope | Achievable with techniques covered through Week 10; not trivially small, not unrealistically large for 2–3 people over ~8 weeks |
-| Data access | Data is identified and actually obtainable (not "we'll find something") — license/access terms noted |
-| Course integration | Clear tie to at least 2–3 course concepts (e.g., workflow management + databases + AI assistance) |
-| AI plan | Concrete, not just "we'll use ChatGPT" — names likely use cases and a validation approach |
-| Team roles | Divided plausibly; not one person doing everything |
-| Feasibility | Team has (or has a credible plan to get) the skills/tools needed |
+| Scope | A genuine, specific description of what will be built — doesn't need to be perfectly right-sized |
+| Data access | Data source(s) named with how access works, not "we'll find something" |
+| Course integration | Names specific course concepts (Weeks 1–10) the project draws on |
+| AI plan | Concrete use cases and how AI output will be validated, not just "we'll use ChatGPT" |
+| Team roles | A real, specific division of work |
+| Feasibility | Team names the skills/tools they have, or a credible plan to get them |
 
-**Scoring:** Approved as-is (full 10%) / Approved with minor revision noted
-(full 10%, revision tracked informally) / Revise and resubmit (grade
-withheld until resubmitted, target within 1 week).
-
-## Open item
-
-No numeric partial-credit scale defined for the 10% — currently pass/fail
-gated on approval. Decide if a rejected-then-fixed proposal should ever lose
-points, or if resubmission is penalty-free as drafted here.
+**Scoring:** Full credit (10%) for a genuine, complete effort on every
+section above. A section left blank, boilerplate, or clearly not thought
+through loses credit for that section. Proposals aren't rejected or
+withheld for a scope the instructor thinks is unrealistic — that's handled
+as feedback to the team, not a grading penalty.
