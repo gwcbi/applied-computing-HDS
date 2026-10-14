@@ -1,0 +1,55 @@
+{
+  "header": {
+    "type": "esummary",
+    "version": "0.3"
+  },
+  "result": {
+    "uids": [
+      "3845"
+    ],
+    "3845": {
+      "uid": "3845",
+      "name": "KRAS",
+      "description": "KRas proto-oncogene, GTPase",
+      "chromosome": "12",
+      "maplocation": "12p12.1",
+      "otheraliases": "'C-K-RAS, C-K-RAS, CFC2, K-RAS2A, K-RAS2B, K-RAS4A, K-RAS4B, K-Ras, K-Ras 2, KI-RAS, KRAS1, KRAS2, NS, NS3, OES, RALD, RALD2, RASK2, c-Ki-ras, c-Ki-ras2",
+      "nomenclaturesymbol": "KRAS",
+      "nomenclaturestatus": "Official",
+      "mim": [
+        "190070"
+      ],
+      "genomicinfo": [
+        {
+          "chrloc": "12",
+          "chraccver": "NC_000012.12",
+          "chrstart": 25250928,
+          "chrstop": 25205245,
+          "exoncount": 7
+        }
+      ],
+      "organism": {
+        "scientificname": "Homo sapiens",
+        "commonname": "human",
+        "taxid": 9606
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2025_08",
+          "assemblyaccver": "GCF_000001405.40",
+          "chraccver": "NC_000012.12",
+          "chrstart": 25250928,
+          "chrstop": 25205245
+        },
+        {
+          "annotationrelease": "RS_2024_09",
+          "assemblyaccver": "GCF_000001405.25",
+          "chraccver": "NC_000012.11",
+          "chrstart": 25403862,
+          "chrstop": 25358179
+        }
+      ]
+    }
+  },
+  "_note": "TRIMMED snapshot of esummary db=gene id=3845, retrieved 2026-10-14. Fields removed for length; values unchanged. GCF_000001405.40 = GRCh38, GCF_000001405.25 = GRCh37."
+}

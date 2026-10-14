@@ -1,0 +1,12 @@
+# Week 8 demo environment. One-time setup (about 2 min):
+#   mamba env create -f environment.yml
+#   mamba activate week08
+# Covers: q.py, genomic_api_demo.sh, W08L_demo.ipynb, the sqlite3 command-line tool.
+name: week08
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyterlab
+  - pandas
+  - sqlite        # provides the sqlite3 command-line tool

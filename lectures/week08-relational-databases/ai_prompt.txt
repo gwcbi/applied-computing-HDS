@@ -1,0 +1,22 @@
+Here is the schema of a SQLite database:
+
+CREATE TABLE subjects (
+  subject_id INTEGER PRIMARY KEY,
+  cohort     TEXT NOT NULL,
+  age_group  TEXT
+);
+CREATE TABLE samples (
+  sample_id  INTEGER PRIMARY KEY,
+  subject_id INTEGER NOT NULL REFERENCES subjects(subject_id),
+  tissue     TEXT NOT NULL,
+  collected  TEXT
+);
+CREATE TABLE mutations (
+  mutation_id INTEGER PRIMARY KEY,
+  sample_id   INTEGER NOT NULL REFERENCES samples(sample_id),
+  gene_symbol TEXT,
+  hgvs_p      TEXT,
+  vaf         REAL
+);
+
+Write a SQLite query that lists every subject and how many KRAS-mutant tumor samples they have, including subjects with zero.
