@@ -1,0 +1,20 @@
+# Week 9 environment. One-time setup (about 5 min):
+#   mamba env create -f environment.yml
+#   mamba activate week09
+# Covers: W09L_demo.ipynb, practical.md, samtools/bcftools command-line tools.
+name: week09
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  - jupyterlab
+  - pandas
+  - pyarrow
+  - h5py
+  - python-duckdb
+  - requests
+  - matplotlib
+  - pysam
+  - samtools
+  - bcftools

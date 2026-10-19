@@ -74,8 +74,9 @@ dbGetQuery(con, "SELECT * FROM samples LIMIT 5")
 | `environment.yml` | Optional conda environment with everything above: `mamba env create -f environment.yml` |
 | `generate_demo_db.py` | Rebuilds the database from scratch |
 
-This is **not** the Lab 4 database. Lab 4 (assigned next week) uses a clinic
-database with a different structure.
+This is **not** the Lab 4 database. Lab 4 (assigned next week) uses a real
+lung cancer sequencing database (TCGA, from cBioPortal) with a similar shape
+but different data.
 
 ## Quick reference
 

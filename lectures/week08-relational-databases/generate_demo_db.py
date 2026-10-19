@@ -1,6 +1,6 @@
 """Week 8 lecture demo database: a toy tumor-sequencing cohort + real gene annotation.
 
-Deliberately NOT the Lab 4 clinic.db, so the lecture doesn't spoil the lab.
+Deliberately NOT the Lab 4 cohort.db, so the lecture doesn't spoil the lab.
 - subjects / samples / mutations: synthetic (hand-written, deterministic).
 - genes / transcripts: real KRAS + ETFRF1 rows copied from UCSC (hg38 MANE track,
   queried via api.genome.ucsc.edu on 2026-10-14); other gene IDs are public NCBI/Ensembl IDs.

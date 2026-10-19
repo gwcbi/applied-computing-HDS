@@ -13,7 +13,7 @@ scripts" into a managed workflow.
 
 This lab **reuses your own work from Labs 3 and 4** (or, if those weren't
 completed, the raw inputs directly from `data/raw/lab3-messy-data/` and
-`data/raw/lab4-relational-data/`). If you don't have working Lab 3/4
+`data/raw/lab4-cbioportal-luad/`). If you don't have working Lab 3/4
 outputs, use your own from-scratch cleaning/query scripts — the point is
 chaining real steps, not the specific prior lab grade.
 
@@ -23,7 +23,7 @@ chaining real steps, not the specific prior lab grade.
    choice) with at least these stages:
    - Clean `messy_samples.csv` → structured samples table (reuses/extends
      Lab 3 regex logic)
-   - Query `clinic.db` → patient feature table (reuses/extends Lab 4 SQL)
+   - Query `cohort.db` → patient feature table (reuses/extends Lab 4 SQL)
    - Merge the two into one combined analytic table
    - Produce a summary report (a rendered notebook or a simple
      figure + text summary) from the combined table

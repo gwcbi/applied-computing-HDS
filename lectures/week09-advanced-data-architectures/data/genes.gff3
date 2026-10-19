@@ -1,0 +1,14 @@
+##gff-version 3
+chrT1	toy	gene	101	950	.	+	.	ID=gene:geneA;Name=geneA;biotype=protein_coding
+chrT1	toy	mRNA	101	950	.	+	.	ID=tx:geneA.1;Parent=gene:geneA;Name=geneA.1
+chrT1	toy	exon	101	250	.	+	.	ID=exon:geneA.1;Parent=tx:geneA.1
+chrT1	toy	exon	401	560	.	+	.	ID=exon:geneA.2;Parent=tx:geneA.1
+chrT1	toy	exon	801	950	.	+	.	ID=exon:geneA.3;Parent=tx:geneA.1
+chrT1	toy	gene	701	1150	.	-	.	ID=gene:geneB;Name=geneB;biotype=protein_coding
+chrT1	toy	mRNA	701	1150	.	-	.	ID=tx:geneB.1;Parent=gene:geneB;Name=geneB.1
+chrT1	toy	exon	701	780	.	-	.	ID=exon:geneB.1;Parent=tx:geneB.1
+chrT1	toy	exon	1001	1150	.	-	.	ID=exon:geneB.2;Parent=tx:geneB.1
+chrT2	toy	gene	51	520	.	+	.	ID=gene:geneC;Name=geneC;biotype=protein_coding
+chrT2	toy	mRNA	51	520	.	+	.	ID=tx:geneC.1;Parent=gene:geneC;Name=geneC.1
+chrT2	toy	exon	51	200	.	+	.	ID=exon:geneC.1;Parent=tx:geneC.1
+chrT2	toy	exon	401	520	.	+	.	ID=exon:geneC.2;Parent=tx:geneC.1

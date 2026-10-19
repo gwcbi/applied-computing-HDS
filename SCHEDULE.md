@@ -83,11 +83,12 @@ Schedule is identical for the graduate (PUBH 6854) and undergraduate (PUBH 4201)
 - Required readings: PCB Chapters 14–15
 - Hands-on exercise: Query and merge multiple data tables into one analytic dataset
 - Learning objectives: Understand relational data concepts; integrate multiple data sources; prepare data for downstream analysis
+- Sets up: **Lab 4** (assigned Week 9)
 
 ### Week 9 — Advanced Data Architectures
 - **Lecture:** Oct 19 · **Practical:** Oct 21
 - Topics: Common data formats in HDS — flat file, hierarchical (H5), columnar (parquet/Apache Arrow); HDS-specific semi-structured formats (FASTQ, BED, GFF/GTF, VCF, BAM); accessing APIs (JSON)
-- Deliverable: **Lab 4 — Database-Driven Feature Table** (due Wed, Oct 28, 11:59pm)
+- Deliverable: **Lab 4 — Database-Driven Feature Table** (assigned Mon, Oct 19; due Wed, Oct 28, 11:59pm). Draws on Week 8's SQL; Lab 4 work time in the Oct 21 practical
 
 ### Week 10 — Workflow Management & Remote Computing
 - **Lecture:** Oct 26 · **Practical:** Oct 28

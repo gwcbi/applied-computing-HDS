@@ -1,0 +1,13 @@
+chrT1	toy	gene	101	950	.	+	.	gene_id "geneA"; gene_name "geneA"; gene_biotype "protein_coding";
+chrT1	toy	transcript	101	950	.	+	.	gene_id "geneA"; transcript_id "geneA.1"; gene_name "geneA";
+chrT1	toy	exon	101	250	.	+	.	gene_id "geneA"; transcript_id "geneA.1"; exon_number "1"; gene_name "geneA";
+chrT1	toy	exon	401	560	.	+	.	gene_id "geneA"; transcript_id "geneA.1"; exon_number "2"; gene_name "geneA";
+chrT1	toy	exon	801	950	.	+	.	gene_id "geneA"; transcript_id "geneA.1"; exon_number "3"; gene_name "geneA";
+chrT1	toy	gene	701	1150	.	-	.	gene_id "geneB"; gene_name "geneB"; gene_biotype "protein_coding";
+chrT1	toy	transcript	701	1150	.	-	.	gene_id "geneB"; transcript_id "geneB.1"; gene_name "geneB";
+chrT1	toy	exon	701	780	.	-	.	gene_id "geneB"; transcript_id "geneB.1"; exon_number "1"; gene_name "geneB";
+chrT1	toy	exon	1001	1150	.	-	.	gene_id "geneB"; transcript_id "geneB.1"; exon_number "2"; gene_name "geneB";
+chrT2	toy	gene	51	520	.	+	.	gene_id "geneC"; gene_name "geneC"; gene_biotype "protein_coding";
+chrT2	toy	transcript	51	520	.	+	.	gene_id "geneC"; transcript_id "geneC.1"; gene_name "geneC";
+chrT2	toy	exon	51	200	.	+	.	gene_id "geneC"; transcript_id "geneC.1"; exon_number "1"; gene_name "geneC";
+chrT2	toy	exon	401	520	.	+	.	gene_id "geneC"; transcript_id "geneC.1"; exon_number "2"; gene_name "geneC";

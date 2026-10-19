@@ -1,0 +1,7 @@
+chrT1	100	250	geneA.exon1	0	+
+chrT1	400	560	geneA.exon2	0	+
+chrT1	800	950	geneA.exon3	0	+
+chrT1	700	780	geneB.exon1	0	-
+chrT1	1000	1150	geneB.exon2	0	-
+chrT2	50	200	geneC.exon1	0	+
+chrT2	400	520	geneC.exon2	0	+

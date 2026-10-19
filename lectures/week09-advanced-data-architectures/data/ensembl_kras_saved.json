@@ -1,0 +1,16 @@
+{
+  "id": "ENSG00000133703",
+  "version": 16,
+  "object_type": "Gene",
+  "species": "homo_sapiens",
+  "assembly_name": "GRCh38",
+  "seq_region_name": "12",
+  "start": 25205246,
+  "end": 25326473,
+  "strand": -1,
+  "biotype": "protein_coding",
+  "display_name": "KRAS",
+  "description": "KRAS proto-oncogene, GTPase [Source:HGNC Symbol;Acc:HGNC:6407]",
+  "canonical_transcript": "ENST00000311936.8",
+  "source": "ensembl_havana"
+}

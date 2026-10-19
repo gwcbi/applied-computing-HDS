@@ -1,0 +1,10 @@
+##fileformat=VCFv4.2
+##contig=<ID=chrT1,length=1200>
+##contig=<ID=chrT2,length=800>
+##FILTER=<ID=LowQual,Description="Low quality call">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Total read depth">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele frequency">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE1
+chrT1	500	.	A	C	99	PASS	DP=20;AF=0.50	GT	0/1
+chrT1	900	.	T	A	12	LowQual	DP=3;AF=0.33	GT	0/1

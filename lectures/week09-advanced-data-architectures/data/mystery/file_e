@@ -1,0 +1,73 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 3,
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pt1",
+        "gender": "female",
+        "birthDate": "1984-03-02",
+        "name": [
+          {
+            "family": "Rivera",
+            "given": [
+              "Ana"
+            ]
+          }
+        ],
+        "address": [
+          {
+            "city": "Washington",
+            "state": "DC"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pt2",
+        "gender": "male",
+        "birthDate": "1971-11-19",
+        "name": [
+          {
+            "family": "Okafor",
+            "given": [
+              "Chidi"
+            ]
+          }
+        ],
+        "address": [
+          {
+            "city": "Washington",
+            "state": "DC"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pt3",
+        "gender": "female",
+        "birthDate": "1996-07-30",
+        "name": [
+          {
+            "family": "Lindqvist",
+            "given": [
+              "Maja"
+            ]
+          }
+        ],
+        "address": [
+          {
+            "city": "Georgetown",
+            "state": "DC"
+          }
+        ]
+      }
+    }
+  ]
+}
