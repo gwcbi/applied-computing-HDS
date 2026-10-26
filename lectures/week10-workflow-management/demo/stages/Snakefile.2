@@ -1,0 +1,28 @@
+configfile: "config.yaml"
+
+SAMPLES = config["samples"]
+
+
+rule all:
+    input:
+        expand("results/counts/{sample}.tsv", sample=SAMPLES),
+
+
+rule filter_variants:
+    input:
+        "data/raw/{sample}.tsv",
+    output:
+        "results/filtered/{sample}.tsv",
+    params:
+        min_vaf=config["min_vaf"],
+    shell:
+        "python scripts/filter_variants.py --input {input} --output {output} --min-vaf {params.min_vaf}"
+
+
+rule count_by_gene:
+    input:
+        "results/filtered/{sample}.tsv",
+    output:
+        "results/counts/{sample}.tsv",
+    shell:
+        "python scripts/count_by_gene.py --input {input} --output {output} --sample {wildcards.sample}"

@@ -1,0 +1,19 @@
+configfile: "config.yaml"
+
+SAMPLES = config["samples"]
+
+
+rule all:
+    input:
+        expand("results/filtered/{sample}.tsv", sample=SAMPLES),
+
+
+rule filter_variants:
+    input:
+        "data/raw/{sample}.tsv",
+    output:
+        "results/filtered/{sample}.tsv",
+    params:
+        min_vaf=config["min_vaf"],
+    shell:
+        "python scripts/filter_variants.py --input {input} --output {output} --min-vaf {params.min_vaf}"

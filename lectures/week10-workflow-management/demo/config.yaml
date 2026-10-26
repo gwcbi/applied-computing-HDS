@@ -1,0 +1,2 @@
+samples: [S01, S02, S03, S04, S05, S06]
+min_vaf: 0.10

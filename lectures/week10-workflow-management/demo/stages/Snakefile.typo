@@ -1,0 +1,46 @@
+configfile: "config.yaml"
+
+SAMPLES = config["samples"]
+
+
+rule all:
+    input:
+        "results/matrix.png",
+
+
+rule filter_variants:
+    input:
+        "data/raw/{sample}.tsvv",
+    output:
+        "results/filtered/{sample}.tsv",
+    params:
+        min_vaf=config["min_vaf"],
+    shell:
+        "python scripts/filter_variants.py --input {input} --output {output} --min-vaf {params.min_vaf}"
+
+
+rule count_by_gene:
+    input:
+        "results/filtered/{sample}.tsv",
+    output:
+        "results/counts/{sample}.tsv",
+    shell:
+        "python scripts/count_by_gene.py --input {input} --output {output} --sample {wildcards.sample}"
+
+
+rule merge_counts:
+    input:
+        expand("results/counts/{sample}.tsv", sample=SAMPLES),
+    output:
+        "results/matrix.tsv",
+    shell:
+        "python scripts/merge_counts.py --inputs {input} --output {output}"
+
+
+rule plot_matrix:
+    input:
+        "results/matrix.tsv",
+    output:
+        "results/matrix.png",
+    shell:
+        "python scripts/plot_matrix.py --input {input} --output {output}"

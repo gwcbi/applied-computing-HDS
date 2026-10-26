@@ -1,0 +1,28 @@
+# Starter Snakefile. Rule 1 is done for you; fill in the TODOs.
+configfile: "config.yaml"
+
+SITES = config["sites"]
+
+
+rule all:
+    input:
+        "results/hba1c_by_site.png",
+
+
+rule clean_site:
+    input:
+        "data/sites/{site}.tsv",
+    output:
+        "results/clean/{site}.tsv",
+    params:
+        max_sbp=config["max_sbp"],
+    shell:
+        "python scripts/clean_site.py --input {input} --output {output} --max-sbp {params.max_sbp}"
+
+
+# TODO 1: rule summarize_site  (input: cleaned file for one site; output: results/summary/{site}.tsv)
+#         script needs --site {wildcards.site}
+
+# TODO 2: rule combine_summaries  (input: ALL sites' summary files -> use expand(); output: results/all_sites.tsv)
+
+# TODO 3: rule plot_summary  (input: results/all_sites.tsv; output: results/hba1c_by_site.png)

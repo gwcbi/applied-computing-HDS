@@ -1,0 +1,12 @@
+name: week10
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  - snakemake>=9
+  - pandas
+  - matplotlib
+  - graphviz
+  - pygments
+  - jupyterlab
