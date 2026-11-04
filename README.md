@@ -14,15 +14,17 @@ All deadlines are at 11:59pm (ET) unless otherwise noted.
 | Lab 1 — Reproducible Computing Setup         | Wed, Sep 9 |
 | Lab 2 — Analysis Notebook                    | Wed, Sep 16 |
 | Quiz 2                                       | Fri, Sep 25 |
-| Lab 3 — Parsing Messy Health or Genomic Data | Wed, Sep 30 |
+| Lab 3 — Parsing Messy Health or Genomic Data | Fri, Oct 2 |
 | Final Project Proposal                       | Wed, Oct 7 |
 | Quiz 3                                       | Fri, Oct 9 |
-| Lab 4 — Database-Driven Feature Table        | Wed, Oct 28 |
+| Lab 4 — Database-Driven Feature Table        | Fri, Oct 30 |
 | Quiz 4                                       | Fri, Oct 30 |
-| Lab 5 — Scalable Analysis Workflow           | Wed, Nov 4 |
+| Lab 5 — Scalable Analysis Workflow           | Wed, Nov 11 |
 | Quiz 5                                       | Fri, Nov 20 |
 | Final Project Presentations                  | Mon–Wed, Dec 7–9 |
 | Final Project (final deliverable)            | Mon, Dec 14 |
+
+**Schedule change (Nov):** Mon Nov 2 class was cancelled (campus power outage). The Week 11 lecture moved to Wed Nov 4, the Week 12 lecture is Mon Nov 9, and the Week 11 and Week 12 practicals are combined into one session on Wed Nov 11. No assignment due dates changed. See [`SCHEDULE.md`](SCHEDULE.md).
 
 
 ## Office Hours
@@ -37,13 +39,13 @@ Schedule (subject to change):
 | Wed Sep 9th | 2:30 - 3:30 | Lab 1 due 9/9 |
 | Mon Sep 14th | 2:30 - 3:30 | Lab 2 due Wed 9/16 |
 | Wed Sep 23rd | 2:30 - 3:30 | |
-| Mon Sep 28th | 2:30 - 3:30 | Lab 3 due Wed 9/30 |
+| Mon Sep 28th | 2:30 - 3:30 | Lab 3 due Fri 10/2 |
 | Wed Oct 7th | 2:30 - 3:30 | Final project proposal due 10/7 |
 | Mon Oct 12th | 2:30 - 3:30 | |
 | Wed Oct 21st | 2:30 - 3:30 | |
-| Mon Oct 26th | 2:30 - 3:30 | Lab 4 due Wed 10/28 |
-| Wed Nov 4th | 2:30 - 3:30 | Lab 5 due Wed 11/4 |
-| Mon Nov 9th | 2:30 - 3:30 | |
+| Mon Oct 26th | 2:30 - 3:30 | Lab 4 due Fri 10/30 |
+| Wed Nov 4th | 2:30 - 3:30 | |
+| Mon Nov 9th | 2:30 - 3:30 | Lab 5 due Wed 11/11 |
 | Wed Nov 18th | 2:30 - 3:30 | |
 | Wed Dec 2nd | 2:30 - 3:30 | |
 | Mon Dec 7th | 2:30 - 3:30 | |

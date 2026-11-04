@@ -13,9 +13,9 @@ each, are required for full credit.
 |---|---|---|---|
 | Lab 1 — Reproducible Computing Setup | Wed, Sep 9 | [README](lab1-reproducible-setup/README.md) | [rubric](lab1-reproducible-setup/rubric.md) |
 | Lab 2 — Analysis Notebook | Wed, Sep 16 | [README](lab2-analysis-notebook/README.md) | [rubric](lab2-analysis-notebook/rubric.md) |
-| Lab 3 — Parsing Messy Health or Genomic Data | Wed, Sep 30 | [README](lab3-parsing-messy-data/README.md) | [rubric](lab3-parsing-messy-data/rubric.md) |
-| Lab 4 — Database-Driven Feature Table | Wed, Oct 28 | [README](lab4-database-feature-table/README.md) | [rubric](lab4-database-feature-table/rubric.md) |
-| Lab 5 — Scalable Analysis Workflow | Wed, Nov 4 | [README](lab5-scalable-workflow/README.md) | [rubric](lab5-scalable-workflow/rubric.md) |
+| Lab 3 — Parsing Messy Health or Genomic Data | Fri, Oct 2 | [README](lab3-parsing-messy-data/README.md) | [rubric](lab3-parsing-messy-data/rubric.md) |
+| Lab 4 — Database-Driven Feature Table | Fri, Oct 30 | [README](lab4-database-feature-table/README.md) | [rubric](lab4-database-feature-table/rubric.md) |
+| Lab 5 — Scalable Analysis Workflow | Wed, Nov 11 | [README](lab5-scalable-workflow/README.md) | [rubric](lab5-scalable-workflow/rubric.md) |
 
 All due dates are 11:59pm ET. See [SCHEDULE.md](../SCHEDULE.md) for the full
 course schedule.

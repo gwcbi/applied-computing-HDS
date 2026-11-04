@@ -53,7 +53,7 @@ Schedule is identical for the graduate (PUBH 6854) and undergraduate (PUBH 4201)
 - Required readings: 
   - DSF Chapters 3–7, 10
 - Hands-on exercise: Build a small feature table from raw inputs
-- Deliverable: **Lab 3 — Parsing Messy Health or Genomic Data** (due Wed, Sep 30, 11:59pm)
+- Deliverable: **Lab 3 — Parsing Messy Health or Genomic Data** (due Fri, Oct 2, 11:59pm)
 - Learning objectives: Transform raw data into structured analytic formats; understand data readiness for modeling and inference
 
 ---
@@ -88,12 +88,12 @@ Schedule is identical for the graduate (PUBH 6854) and undergraduate (PUBH 4201)
 ### Week 9 — Advanced Data Architectures
 - **Lecture:** Oct 19 · **Practical:** Oct 21
 - Topics: Common data formats in HDS — flat file, hierarchical (H5), columnar (parquet/Apache Arrow); HDS-specific semi-structured formats (FASTQ, BED, GFF/GTF, VCF, BAM); accessing APIs (JSON)
-- Deliverable: **Lab 4 — Database-Driven Feature Table** (assigned Mon, Oct 19; due Wed, Oct 28, 11:59pm). Draws on Week 8's SQL; Lab 4 work time in the Oct 21 practical
+- Deliverable: **Lab 4 — Database-Driven Feature Table** (assigned Mon, Oct 19; due Fri, Oct 30, 11:59pm). Draws on Week 8's SQL; Lab 4 work time in the Oct 21 practical
 
 ### Week 10 — Workflow Management & Remote Computing
 - **Lecture:** Oct 26 · **Practical:** Oct 28
 - Topics: Workflow fundamentals — inputs and outputs as dependencies; workflow management systems (Snakemake, Nextflow, Cromwell); remote development and SSH fundamentals (hands-on via pwn.college's Linux Luminarium dojo — free, self-paced, no local setup or institutional approval required)
-- Deliverable: **Lab 5 — Scalable Analysis Workflow** (due Wed, Nov 4, 11:59pm)
+- Deliverable: **Lab 5 — Scalable Analysis Workflow** (due Wed, Nov 11, 11:59pm)
 - Learning objectives: Fundamentals of workflow management tools; implement loose collections of analysis scripts as reproducible workflows; connect to and work confidently in a remote Linux environment over SSH
 
 ---
@@ -103,19 +103,19 @@ Schedule is identical for the graduate (PUBH 6854) and undergraduate (PUBH 4201)
 *Focus: Responsible use of generative AI, prompt engineering, and integration of AI into end-to-end health data science workflows.*
 
 ### Week 11 — Prompt Engineering and Generative AI
-- **Lecture:** Nov 2 · **Practical:** Nov 4
+- **No class:** Nov 2 (campus power outage) · **Lecture:** Nov 4 · **Practical:** Nov 11 (combined with Week 12)
 - Topics: Prompt engineering fundamentals; task decomposition and prompt iteration; using Copilot, ChatGPT, Claude, and Gemini for analysis tasks
 - Required readings: Instructor-provided notes on prompt engineering
 - Recommended readings: Responsible AI guidelines; AI evaluation case studies
 - Ongoing: Final Project
 
 ### Week 12 — Advanced Prompt Engineering and Generative AI
-- **Lecture:** Nov 9 · **Practical:** Nov 11
+- **Lecture:** Nov 9 · **Practical:** Nov 11 (one combined Week 11 + Week 12 practical)
 - Topics: Integrating AI tools into development environments; hallucination detection and validation
 - Required readings: Instructor-provided notes
 - Ongoing: Final Project
 - **Final Project progress check-in:** brief, informal team check-ins
-  during the Nov 11 practical — no written submission, just be ready to
+  during the Nov 11 combined practical — no written submission, just be ready to
   share status and flag any blockers
 
 ### Week 13 — Human-in-the-Loop Analytics
