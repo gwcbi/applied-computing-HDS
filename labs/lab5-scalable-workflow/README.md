@@ -1,6 +1,6 @@
 # Lab 5: Scalable Analysis Workflow
 
-**Due:** Wed, Nov 4, 11:59pm (see [SCHEDULE.md](../../SCHEDULE.md)). **Weight:** 9% of final grade.
+**Due:** Wed, Nov 11, 11:59pm (see [SCHEDULE.md](../../SCHEDULE.md)). **Weight:** 9% of final grade.
 
 ## Background
 
@@ -24,9 +24,9 @@ chaining real steps, not the specific prior lab grade.
    - Clean `messy_samples.csv` → structured samples table (reuses/extends
      Lab 3 regex logic)
    - Query `cohort.db` → patient feature table (reuses/extends Lab 4 SQL)
-   - Merge the two into one combined analytic table
+   - ~~Merge the two into one combined analytic table~~
    - Produce a summary report (a rendered notebook or a simple
-     figure + text summary) from the combined table
+     figure + text summary) from the ~~combined~~ table
 2. **Make each rule/process declare its real inputs and outputs** — no
    step should silently depend on files not declared to the workflow
    engine.
