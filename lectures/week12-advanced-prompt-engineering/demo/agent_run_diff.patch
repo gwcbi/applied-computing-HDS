@@ -1,0 +1,119 @@
+diff --git a/labkit/__init__.py b/labkit/__init__.py
+index a7f9922..69c6aac 100644
+--- a/labkit/__init__.py
++++ b/labkit/__init__.py
+@@ -1,3 +1,4 @@
+ """labkit: tiny helpers for cleaning clinical lab tables."""
+ from .convert import glucose_mgdl_to_mmol
+ from .io import read_labs
++from .ranges import flag_out_of_range
+diff --git a/labkit/ranges.py b/labkit/ranges.py
+new file mode 100644
+index 0000000..2ab2258
+--- /dev/null
++++ b/labkit/ranges.py
+@@ -0,0 +1,48 @@
++import pandas as pd
++
++MGDL_PER_MMOL_GLUCOSE = 18.016
++
++# Standard adult reference ranges (inclusive), keyed by test then sex.
++# None as sex key means the range applies to both sexes.
++# Glucose is the fasting range, in mg/dL.
++REFERENCE_RANGES = {
++    "glucose": {"unit": "mg/dL", None: (70, 99)},
++    "creatinine": {"unit": "mg/dL", "F": (0.59, 1.04), "M": (0.74, 1.35)},
++    "hemoglobin": {"unit": "g/dL", "F": (12.0, 15.5), "M": (13.5, 17.5)},
++}
++
++
++def _value_in_ref_units(row):
++    """Return the value in the reference unit, or NaN if the unit is unknown."""
++    ref_unit = REFERENCE_RANGES[row["test"]]["unit"]
++    unit = str(row["unit"]).strip()
++    if unit == ref_unit:
++        return row["value"]
++    if row["test"] == "glucose" and unit == "mmol/L":
++        return row["value"] * MGDL_PER_MMOL_GLUCOSE
++    return float("nan")
++
++
++def _out_of_range(row):
++    ranges = REFERENCE_RANGES.get(row["test"])
++    if ranges is None:
++        return pd.NA
++    rng = ranges.get(None) or ranges.get(str(row["sex"]).strip().upper())
++    value = _value_in_ref_units(row)
++    if rng is None or pd.isna(value):
++        return pd.NA
++    return not (rng[0] <= value <= rng[1])
++
++
++def flag_out_of_range(df):
++    """Return a copy of a `read_labs` table with a boolean `out_of_range` column.
++
++    Uses standard adult reference ranges (sex-specific for creatinine and
++    hemoglobin; fasting range for glucose). Glucose in mmol/L is converted to
++    mg/dL before comparing. Rows with an unknown test, sex, or unit get <NA>
++    rather than a guess.
++    """
++    out = df.copy()
++    flags = [_out_of_range(r) for _, r in out.iterrows()]
++    out["out_of_range"] = pd.Series(flags, index=out.index, dtype="boolean")
++    return out
+diff --git a/tests/test_ranges.py b/tests/test_ranges.py
+new file mode 100644
+index 0000000..be2442e
+--- /dev/null
++++ b/tests/test_ranges.py
+@@ -0,0 +1,50 @@
++import pandas as pd
++from labkit import flag_out_of_range, read_labs
++
++
++def _flag(sex, test, value, unit):
++    df = pd.DataFrame([["P", sex, test, value, unit]],
++                      columns=["patient_id", "sex", "test", "value", "unit"])
++    return flag_out_of_range(df)["out_of_range"].iloc[0]
++
++
++def test_glucose_mixed_units():
++    assert _flag("F", "glucose", 95, "mg/dL") == False  # noqa: E712
++    assert _flag("M", "glucose", 4.0, "mmol/L") == False  # 72 mg/dL  # noqa: E712
++    assert _flag("F", "glucose", 135, "mg/dL") == True  # noqa: E712
++    assert _flag("F", "glucose", 7.5, "mmol/L") == True  # 135 mg/dL  # noqa: E712
++    assert _flag("F", "glucose", 3.0, "mmol/L") == True  # 54 mg/dL  # noqa: E712
++
++
++def test_mmol_not_compared_raw():
++    # 5.3 mmol/L is normal; a raw comparison against 70-99 would flag it.
++    assert _flag("F", "glucose", 5.3, "mmol/L") == False  # noqa: E712
++
++
++def test_sex_specific_hemoglobin():
++    assert _flag("F", "hemoglobin", 13.0, "g/dL") == False  # noqa: E712
++    assert _flag("M", "hemoglobin", 13.0, "g/dL") == True  # noqa: E712
++    assert _flag("F", "hemoglobin", 16.4, "g/dL") == True  # noqa: E712
++
++
++def test_sex_specific_creatinine():
++    assert _flag("M", "creatinine", 0.58, "mg/dL") == True  # noqa: E712
++    assert _flag("F", "creatinine", 0.58, "mg/dL") == True  # noqa: E712
++    assert _flag("F", "creatinine", 0.60, "mg/dL") == False  # noqa: E712
++    assert _flag("F", "creatinine", 1.14, "mg/dL") == True  # noqa: E712
++    assert _flag("M", "creatinine", 1.14, "mg/dL") == False  # noqa: E712
++
++
++def test_unknown_test_or_unit_is_na():
++    assert pd.isna(_flag("F", "sodium", 140, "mmol/L"))
++    assert pd.isna(_flag("F", "glucose", 95, "furlongs"))
++
++
++def test_does_not_mutate_input_and_keeps_rows():
++    df = read_labs("data/labs.tsv")
++    cols = list(df.columns)
++    out = flag_out_of_range(df)
++    assert list(df.columns) == cols
++    assert len(out) == len(df)
++    assert out["out_of_range"].dtype == "boolean"
++    assert out["out_of_range"].notna().all()

@@ -1,0 +1,1 @@
+Add a function `flag_out_of_range(df)` to labkit that adds a boolean column `out_of_range` to a lab table from `read_labs`, using standard adult reference ranges (sex-specific where that applies). The table has mixed units for glucose. Add tests and make sure they pass.

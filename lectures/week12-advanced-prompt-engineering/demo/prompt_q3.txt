@@ -1,0 +1,1 @@
+In Python's lifelines, what's the function that computes restricted mean survival time for each group in one call, using a `by=` argument on a dataframe, and also returns a p-value for the difference between groups? Show a short example.

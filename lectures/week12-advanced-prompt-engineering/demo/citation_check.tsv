@@ -1,0 +1,6 @@
+n	cited_authors	cited_year	cited_doi	crossref_title	crossref_journal	crossref_year	crossref_vol_issue_pages	result
+1	Kaplan, Meier	1958	10.1080/01621459.1958.10501452	Nonparametric Estimation from Incomplete Observations	Journal of the American Statistical Association	1958	-	exists, matches
+2	Schemper, Smith	1996	10.1016/0197-2456(96)00075-X	A note on quantifying follow-up in studies of failure time	Controlled Clinical Trials	1996	17(4) 343-346	exists, matches
+3	Clark, Bradburn, Love, Altman	2003	10.1038/sj.bjc.6601118	Survival Analysis Part I: Basic concepts and first analyses	British Journal of Cancer	2003	89(2) 232-238	exists, matches
+4	Liu, Lichtenberg, Hoadley et al.	2018	10.1016/j.cell.2018.02.052	An Integrated TCGA Pan-Cancer Clinical Data Resource to Drive High-Quality Survival Outcome Analytics	Cell	2018	173(2) 400-416.e11	exists, matches
+5	Rich, Neely, Paniello, Voelker, Nussenbaum, Wang	2010	10.1016/j.otohns.2010.05.007	A practical guide to understanding Kaplan-Meier curves	Otolaryngology-Head and Neck Surgery	2010	143(3) 331-336	exists, matches

@@ -1,0 +1,1 @@
+I'm writing the methods section of a paper on survival analysis of TCGA lung adenocarcinoma clinical data. Give me 5 peer-reviewed references (authors, year, title, journal, DOI) on how censoring should be handled when estimating median survival with Kaplan-Meier.

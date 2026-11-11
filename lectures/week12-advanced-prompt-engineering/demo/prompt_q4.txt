@@ -1,0 +1,1 @@
+What is the median overall survival, in months, for stage IV patients in the TCGA PanCancer Atlas lung adenocarcinoma (LUAD) cohort? Give me one number.
