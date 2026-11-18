@@ -1,0 +1,14 @@
+sample_id	error
+S0033	date_swap
+S0051	date_swap
+S0042	date_swap
+S0012	date_swap
+S0056	two_digit_year
+S0052	two_digit_year
+S0055	unit_not_converted
+S0053	unit_not_converted
+S0060	unit_not_converted
+S0057	sex_guess
+S0018	sex_guess
+S0027	impute_na
+S0054	site_error

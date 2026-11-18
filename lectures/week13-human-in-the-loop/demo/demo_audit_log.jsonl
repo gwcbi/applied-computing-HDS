@@ -1,0 +1,12 @@
+{"ts": "2026-11-16T10:38:02", "step": "extract", "actor": "ai:stand-in", "input_sha": "1a20c73f7e34", "output_sha": "c3c7204b3d72", "prompt": "(stand-in; in real use, save the prompt text or its hash)", "n_rows": 60}
+{"ts": "2026-11-16T10:38:02", "step": "validate", "actor": "code:validate()", "rules": 4, "flagged": 5}
+{"ts": "2026-11-16T10:38:02", "step": "route", "actor": "code:confidence<0.80", "routed": 4}
+{"ts": "2026-11-16T10:38:02", "step": "review", "actor": "human:MB", "sample_id": "S0002", "decision": "accept", "changed_fields": [], "reason": "matches source"}
+{"ts": "2026-11-16T10:38:02", "step": "review", "actor": "human:MB", "sample_id": "S0006", "decision": "accept", "changed_fields": [], "reason": "matches source"}
+{"ts": "2026-11-16T10:38:02", "step": "review", "actor": "human:MB", "sample_id": "S0016", "decision": "accept", "changed_fields": [], "reason": "matches source"}
+{"ts": "2026-11-16T10:38:02", "step": "review", "actor": "human:MB", "sample_id": "S0040", "decision": "accept", "changed_fields": [], "reason": "matches source"}
+{"ts": "2026-11-16T10:38:02", "step": "review", "actor": "human:MB", "sample_id": "S0052", "decision": "fix", "changed_fields": ["dob"], "reason": "checked against raw row"}
+{"ts": "2026-11-16T10:38:02", "step": "review", "actor": "human:MB", "sample_id": "S0053", "decision": "fix", "changed_fields": ["glucose_mgdl"], "reason": "checked against raw row"}
+{"ts": "2026-11-16T10:38:02", "step": "review", "actor": "human:MB", "sample_id": "S0055", "decision": "fix", "changed_fields": ["glucose_mgdl"], "reason": "checked against raw row"}
+{"ts": "2026-11-16T10:38:02", "step": "review", "actor": "human:MB", "sample_id": "S0056", "decision": "fix", "changed_fields": ["dob"], "reason": "checked against raw row"}
+{"ts": "2026-11-16T10:38:02", "step": "review", "actor": "human:MB", "sample_id": "S0060", "decision": "fix", "changed_fields": ["glucose_mgdl"], "reason": "checked against raw row"}

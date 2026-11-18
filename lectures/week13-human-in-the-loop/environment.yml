@@ -1,0 +1,8 @@
+name: week13
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pandas
+  - numpy
+  - jupyterlab
